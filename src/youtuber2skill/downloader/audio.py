@@ -35,7 +35,7 @@ def download_audio(
 def _download_single(url: str, output_dir: Path, config: dict) -> dict | None:
     """Download a single video as WAV audio + metadata."""
     ydl_opts = {
-        "format": "bestaudio/best",
+        "format": "bestaudio[ext=m4a]/bestaudio[ext=webm]/bestaudio/best",
         "outtmpl": str(output_dir / "%(id)s.%(ext)s"),
         "postprocessors": [
             {
@@ -48,7 +48,7 @@ def _download_single(url: str, output_dir: Path, config: dict) -> dict | None:
             "-ac", "1",       # mono
         ],
         "quiet": True,
-        "no_warnings": True,
+        "no_warnings": False,
         "ignoreerrors": True,
         "writesubtitles": True,
         "subtitleslangs": ["zh-Hans", "zh", "en"],

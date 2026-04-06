@@ -20,6 +20,9 @@ venv/
 .env
 .env.local
 
+# Secrets
+cookies.txt
+
 # Project specific
 skills/*/transcripts/
 audio/

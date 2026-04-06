@@ -1,5 +1,6 @@
 downloader:
-  cookies_from_browser: safari
+  cookies_from_browser: ""
+  cookies_file: cookies.txt
   quality: 128
   threads: 3
   proxy: ""

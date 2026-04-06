@@ -72,6 +72,9 @@ def _apply_common_opts(ydl_opts: dict, config: dict):
     if config.get("proxy"):
         ydl_opts["proxy"] = config["proxy"]
 
+    # Enable remote JS challenge solver for YouTube
+    ydl_opts["remote_components"] = {"ejs": "github"}
+
 
 def _is_single_video(url: str) -> bool:
     """Check if URL is a single video (not a playlist/channel)."""
