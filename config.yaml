@@ -1,0 +1,22 @@
+downloader:
+  cookies_from_browser: safari
+  quality: 128
+  threads: 3
+  proxy: ""
+
+transcriber:
+  model: medium
+  language: auto
+  vad: true
+  threads: 6
+
+skillgen:
+  api_key: ""       # set via .env (KIMI_API_KEY)
+  base_url: ""      # set via .env (KIMI_BASE_URL)
+  model: kimi-k2.5
+  temperature: 0.6
+
+output:
+  skills_dir: ./skills
+  keep_audio: false
+  keep_transcripts: true

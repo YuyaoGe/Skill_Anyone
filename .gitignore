@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Project specific
+skills/*/transcripts/
+audio/
+*.wav
+*.mp3
+*.m4a
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
