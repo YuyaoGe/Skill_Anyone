@@ -19,9 +19,15 @@ def transcribe_audio(
     model_name = config.get("model", "medium")
     n_threads = config.get("threads", 6)
 
+    language = config.get("language", "auto")
+
     model = Model(model_name, n_threads=n_threads)
 
-    segments = model.transcribe(audio_path)
+    transcribe_kwargs = {}
+    if language and language != "auto":
+        transcribe_kwargs["language"] = language
+
+    segments = model.transcribe(audio_path, **transcribe_kwargs)
 
     transcript_segments = []
     full_text_parts = []

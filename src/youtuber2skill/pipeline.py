@@ -57,6 +57,7 @@ def run_pipeline(url: str, config: dict, max_videos: int = 0):
                 "title": audio_info.get("title", ""),
                 "source": "youtube_subtitle",
                 "text": subtitle_text,
+                "metadata": audio_info.get("metadata", {}),
                 "segments": [],
             }
             with open(transcript_path, "w", encoding="utf-8") as f:
@@ -64,6 +65,17 @@ def run_pipeline(url: str, config: dict, max_videos: int = 0):
         else:
             click.echo(f"  Transcribing: {audio_info.get('title', video_id)}")
             transcribe_audio(audio_path, str(transcript_dir), config["transcriber"])
+
+        # Patch metadata into transcript for channel name detection
+        transcript_path = transcript_dir / f"{video_id}.json"
+        if transcript_path.exists():
+            with open(transcript_path, encoding="utf-8") as f:
+                t = json.load(f)
+            if "metadata" not in t or not t["metadata"]:
+                t["metadata"] = audio_info.get("metadata", {})
+                t["title"] = audio_info.get("title", t.get("title", ""))
+            with open(transcript_path, "w", encoding="utf-8") as f:
+                json.dump(t, f, ensure_ascii=False, indent=2)
 
     # --- Stage 3: Generate Skill ---
     click.echo("\n[Stage 3/3] Generating skill...")

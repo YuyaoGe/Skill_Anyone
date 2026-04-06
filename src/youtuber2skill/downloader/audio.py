@@ -5,7 +5,7 @@ from pathlib import Path
 
 import yt_dlp
 
-from .channel import extract_video_urls
+from .channel import extract_video_urls, _apply_common_opts
 
 
 def download_audio(
@@ -54,14 +54,7 @@ def _download_single(url: str, output_dir: Path, config: dict) -> dict | None:
         "subtitleslangs": ["zh-Hans", "zh", "en"],
         "subtitlesformat": "vtt",
     }
-
-    if config.get("cookies_from_browser"):
-        ydl_opts["cookiesfrombrowser"] = (config["cookies_from_browser"],)
-    elif config.get("cookies_file"):
-        ydl_opts["cookiefile"] = config["cookies_file"]
-
-    if config.get("proxy"):
-        ydl_opts["proxy"] = config["proxy"]
+    _apply_common_opts(ydl_opts, config)
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:

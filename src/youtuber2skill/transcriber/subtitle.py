@@ -4,6 +4,8 @@ import re
 
 import yt_dlp
 
+from ..downloader.channel import _apply_common_opts
+
 
 def download_subtitles(url: str, config: dict) -> str | None:
     """Try to download YouTube subtitles for a video.
@@ -21,12 +23,7 @@ def download_subtitles(url: str, config: dict) -> str | None:
         "subtitleslangs": ["zh-Hans", "zh", "en"],
         "subtitlesformat": "vtt",
     }
-
-    if config.get("cookies_from_browser"):
-        ydl_opts["cookiesfrombrowser"] = (config["cookies_from_browser"],)
-
-    if config.get("proxy"):
-        ydl_opts["proxy"] = config["proxy"]
+    _apply_common_opts(ydl_opts, config)
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:

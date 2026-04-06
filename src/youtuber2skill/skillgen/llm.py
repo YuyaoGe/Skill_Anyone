@@ -12,7 +12,8 @@ class LLMClient:
             base_url=config["base_url"],
         )
         self.model = config.get("model", "kimi-k2.5")
-        self.temperature = config.get("temperature", 0.6)
+        # kimi-k2.5 requires temperature=1 for thinking mode
+        self.temperature = config.get("temperature", 1.0)
 
     def chat(self, system_prompt: str, user_message: str) -> str:
         """Send a chat completion request and return the response text."""

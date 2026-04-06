@@ -25,15 +25,7 @@ def extract_video_urls(
         "extract_flat": True,
         "ignoreerrors": True,
     }
-
-    # Cookie handling
-    if config.get("cookies_from_browser"):
-        ydl_opts["cookiesfrombrowser"] = (config["cookies_from_browser"],)
-    elif config.get("cookies_file"):
-        ydl_opts["cookiefile"] = config["cookies_file"]
-
-    if config.get("proxy"):
-        ydl_opts["proxy"] = config["proxy"]
+    _apply_common_opts(ydl_opts, config)
 
     urls = []
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -57,6 +49,28 @@ def extract_video_urls(
                 urls.append(f"https://www.youtube.com/watch?v={video_id}")
 
     return urls
+
+
+def _apply_common_opts(ydl_opts: dict, config: dict):
+    """Apply cookie and proxy settings, gracefully handling failures."""
+    cookies_browser = config.get("cookies_from_browser", "")
+    cookies_file = config.get("cookies_file", "")
+
+    if cookies_browser:
+        try:
+            # Test if browser cookies are accessible
+            from yt_dlp.cookies import extract_cookies_from_browser
+            extract_cookies_from_browser(cookies_browser)
+            ydl_opts["cookiesfrombrowser"] = (cookies_browser,)
+        except Exception:
+            pass  # Browser cookies not accessible, proceed without
+    elif cookies_file:
+        from pathlib import Path
+        if Path(cookies_file).exists():
+            ydl_opts["cookiefile"] = cookies_file
+
+    if config.get("proxy"):
+        ydl_opts["proxy"] = config["proxy"]
 
 
 def _is_single_video(url: str) -> bool:
