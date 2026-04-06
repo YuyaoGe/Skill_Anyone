@@ -6,8 +6,8 @@ downloader:
   proxy: ""
 
 transcriber:
-  model: base
-  language: en
+  model: medium
+  language: auto
   vad: true
   threads: 6
 
