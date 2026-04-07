@@ -1,5 +1,6 @@
 """Main pipeline orchestrating the 3 stages."""
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -20,7 +21,9 @@ def run_pipeline(url: str, config: dict, max_videos: int = 0):
     Stage 3: Generate AI skill from transcripts
     """
     skills_dir = Path(config["output"]["skills_dir"])
-    work_dir = skills_dir / ".work"
+    # Use URL-based hash for isolated work directory per task
+    url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
+    work_dir = skills_dir / ".work" / url_hash
     audio_dir = work_dir / "audio"
     transcript_dir = work_dir / "transcripts"
     audio_dir.mkdir(parents=True, exist_ok=True)

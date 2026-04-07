@@ -1,0 +1,142 @@
+{
+  "name": "DeepLearningAI",
+  "slug": "deeplearningai",
+  "version": 1,
+  "created_at": "2026-04-06T21:54:12.686012",
+  "updated_at": "2026-04-06T21:54:12.686086",
+  "video_count": 33,
+  "videos": [
+    {
+      "video_id": "-_4Zi8fCZO4",
+      "title": "Understanding Mini-Batch Gradient Dexcent (C2W2L02)"
+    },
+    {
+      "video_id": "1waHlpKiNyY",
+      "title": "Train/Dev/Test Sets (C2W1L01)"
+    },
+    {
+      "video_id": "4Ct3Yujl1dk",
+      "title": "Gradient Checking Implementation Notes (C2W1L14)"
+    },
+    {
+      "video_id": "4qJaSmvhxi8",
+      "title": "Mini Batch Gradient Descent (C2W2L01)"
+    },
+    {
+      "video_id": "5qefnAek8OA",
+      "title": "Batch Norm At Test Time (C2W3L07)"
+    },
+    {
+      "video_id": "6g0t3Phly2M",
+      "title": "Regularization (C2W1L04)"
+    },
+    {
+      "video_id": "ARq74QuavAo",
+      "title": "Understanding Dropout (C2W1L07)"
+    },
+    {
+      "video_id": "AXDByU3D1hA",
+      "title": "Tuning Process (C2W3L01)"
+    },
+    {
+      "video_id": "BOCLq2gpcGU",
+      "title": "Other Regularization Methods (C2W1L08)"
+    },
+    {
+      "video_id": "C1N_PDHuJ6Q",
+      "title": "Basic Recipe for Machine Learning (C2W1L03)"
+    },
+    {
+      "video_id": "D8PJAL-MZv8",
+      "title": "Dropout Regularization (C2W1L06)"
+    },
+    {
+      "video_id": "FDCfw-YqWTE",
+      "title": "Normalizing Inputs (C2W1L09)"
+    },
+    {
+      "video_id": "JXQT_vxqwIs",
+      "title": "Adam Optimization Algorithm (C2W2L08)"
+    },
+    {
+      "video_id": "LLux1SW--oM",
+      "title": "Softmax Regression (C2W3L08)"
+    },
+    {
+      "video_id": "NxTFlzBjS-4",
+      "title": "Understanding Exponentially Weighted Averages (C2W2L04)"
+    },
+    {
+      "video_id": "NyG-7nRpsW8",
+      "title": "Why Regularization Reduces Overfitting (C2W1L05)"
+    },
+    {
+      "video_id": "QrzApibhohY",
+      "title": "Gradient Checking (C2W1L13)"
+    },
+    {
+      "video_id": "QzulmoOg2JE",
+      "title": "Learning Rate Decay (C2W2L09)"
+    },
+    {
+      "video_id": "S9ElPZupUsE",
+      "title": "TensorFlow (C2W3L11)"
+    },
+    {
+      "video_id": "_e-LFe_igno",
+      "title": "RMSProp (C2W2L07)"
+    },
+    {
+      "video_id": "cSoK_6Rkbfg",
+      "title": "Using an Appropriate Scale (C2W3L02)"
+    },
+    {
+      "video_id": "em6dfRxYkYU",
+      "title": "Fitting Batch Norm Into Neural Networks (C2W3L05)"
+    },
+    {
+      "video_id": "fODpu1-lNTw",
+      "title": "The Problem of Local Optima (C2W3L10)"
+    },
+    {
+      "video_id": "k8fTYJPd3_I",
+      "title": "Gradient Descent With Momentum (C2W2L06)"
+    },
+    {
+      "video_id": "lAq96T8FkTw",
+      "title": "Exponentially Weighted Averages (C2W2L03)"
+    },
+    {
+      "video_id": "lWzo8CajF5s",
+      "title": "Bias Correction of Exponentially Weighted Averages (C2W2L05)"
+    },
+    {
+      "video_id": "nUUqwaxLnWs",
+      "title": "Why Does Batch Norm Work? (C2W3L06)"
+    },
+    {
+      "video_id": "qhXZsFVxGKo",
+      "title": "Vanishing/Exploding Gradients (C2W1L10)"
+    },
+    {
+      "video_id": "s2coXdufOzE",
+      "title": "Weight Initialization in a Deep Network (C2W1L11)"
+    },
+    {
+      "video_id": "tNIpEZLv_eg",
+      "title": "Normalizing Activations in a Network (C2W3L04)"
+    },
+    {
+      "video_id": "ueO_Ph0Pyqk",
+      "title": "Training Softmax Classifier (C2W3L09)"
+    },
+    {
+      "video_id": "wKkcBPp3F1Y",
+      "title": "Hyperparameter Tuning in Practice (C2W3L03)"
+    },
+    {
+      "video_id": "y1xoI7mBtOc",
+      "title": "Numerical Approximations of Gradients (C2W1L12)"
+    }
+  ]
+}

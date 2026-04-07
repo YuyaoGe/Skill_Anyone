@@ -1,0 +1,78 @@
+{
+  "name": "Andrej Karpathy",
+  "slug": "andrej-karpathy",
+  "version": 1,
+  "created_at": "2026-04-06T21:14:01.920040",
+  "updated_at": "2026-04-06T21:14:01.921820",
+  "video_count": 17,
+  "videos": [
+    {
+      "video_id": "2oKjtvYslMY",
+      "title": "Stable diffusion dreams of steampunk brains"
+    },
+    {
+      "video_id": "7xTGNNLPyMI",
+      "title": "Deep Dive into LLMs like ChatGPT"
+    },
+    {
+      "video_id": "EWvNQjAaOHw",
+      "title": "How I use LLMs"
+    },
+    {
+      "video_id": "Jv1ayv-04H4",
+      "title": "Stable diffusion dreams of steam punk neural networks"
+    },
+    {
+      "video_id": "P6sfmUTpUmc",
+      "title": "Building makemore Part 3: Activations & Gradients, BatchNorm"
+    },
+    {
+      "video_id": "PaCmpygFfXo",
+      "title": "The spelled-out intro to language modeling: building makemore"
+    },
+    {
+      "video_id": "TCH_1BHY58I",
+      "title": "Building makemore Part 2: MLP"
+    },
+    {
+      "video_id": "VMj-3S1tku0",
+      "title": "The spelled-out intro to neural networks and backpropagation: building micrograd"
+    },
+    {
+      "video_id": "kCc8FmEb1nY",
+      "title": "Let's build GPT: from scratch, in code, spelled out."
+    },
+    {
+      "video_id": "kVpDARqZdrQ",
+      "title": "Stable diffusion dreams of psychedelic faces"
+    },
+    {
+      "video_id": "l8pRSuU81PU",
+      "title": "Let's reproduce GPT-2 (124M)"
+    },
+    {
+      "video_id": "q8SA3rM6ckI",
+      "title": "Building makemore Part 4: Becoming a Backprop Ninja"
+    },
+    {
+      "video_id": "sM9bozW295Q",
+      "title": "Stable diffusion dreams of tattoos"
+    },
+    {
+      "video_id": "t3YJ5hKiMQ0",
+      "title": "Building makemore Part 5: Building a WaveNet"
+    },
+    {
+      "video_id": "vEnetcj_728",
+      "title": "Stable diffusion dreams of \"blueberry spaghetti\" for one night"
+    },
+    {
+      "video_id": "zduSFxRajkE",
+      "title": "Let's build the GPT Tokenizer"
+    },
+    {
+      "video_id": "zjkBMFhNj_g",
+      "title": "[1hr Talk] Intro to Large Language Models"
+    }
+  ]
+}

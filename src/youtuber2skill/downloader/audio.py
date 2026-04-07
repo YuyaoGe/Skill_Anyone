@@ -1,11 +1,15 @@
 """Download YouTube videos and extract audio."""
 
 import json
+import queue
+import threading
 from pathlib import Path
 
 import yt_dlp
 
 from .channel import extract_video_urls, _apply_common_opts
+
+_print_lock = threading.Lock()
 
 
 def download_audio(
@@ -17,17 +21,66 @@ def download_audio(
     """Download audio from YouTube URL(s).
 
     Returns list of dicts with keys: audio_path, video_id, title, url, metadata.
+    Uses multi-threaded downloading when threads > 1 in config.
     """
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
     video_urls = extract_video_urls(url, config, max_videos=max_videos)
-    results = []
+    num_threads = min(config.get("threads", 3), len(video_urls))
 
-    for video_url in video_urls:
-        result = _download_single(video_url, output_path, config)
-        if result:
-            results.append(result)
+    if num_threads <= 1:
+        # Sequential fallback
+        results = []
+        for i, video_url in enumerate(video_urls, 1):
+            with _print_lock:
+                print(f"  [{i}/{len(video_urls)}] Downloading: {video_url}")
+            result = _download_single(video_url, output_path, config)
+            if result:
+                results.append(result)
+        return results
+
+    # Multi-threaded download
+    url_q = queue.Queue()
+    for i, video_url in enumerate(video_urls, 1):
+        url_q.put((i, video_url))
+
+    total = len(video_urls)
+    results = []
+    results_lock = threading.Lock()
+    completed = [0]
+
+    def worker():
+        """Each worker thread owns a persistent yt-dlp instance."""
+        while True:
+            try:
+                i, video_url = url_q.get_nowait()
+            except queue.Empty:
+                break
+
+            with _print_lock:
+                print(f"  [{i}/{total}] Downloading: {video_url}")
+
+            result = _download_single(video_url, output_path, config)
+
+            with results_lock:
+                if result:
+                    results.append(result)
+                completed[0] += 1
+
+            with _print_lock:
+                print(f"  [{completed[0]}/{total}] Completed: {result['title'] if result else 'failed'}")
+
+            url_q.task_done()
+
+    threads = []
+    for _ in range(num_threads):
+        t = threading.Thread(target=worker)
+        t.start()
+        threads.append(t)
+
+    for t in threads:
+        t.join()
 
     return results
 

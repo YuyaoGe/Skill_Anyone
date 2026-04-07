@@ -1,0 +1,218 @@
+{
+  "name": "跟李沐学AI",
+  "slug": "跟李沐学ai",
+  "version": 1,
+  "created_at": "2026-04-06T19:15:50.258803",
+  "updated_at": "2026-04-06T19:15:50.258856",
+  "video_count": 52,
+  "videos": [
+    {
+      "video_id": "-PztagF3wQE",
+      "title": "Llama 3.1论文精读 · 1. 导言【论文精读·54】"
+    },
+    {
+      "video_id": "0Dv4s2P65YQ",
+      "title": "肝了6个月的AudioLLM，开源了【100亿模型计划】"
+    },
+    {
+      "video_id": "1pvxufGRuW4",
+      "title": "对比学习论文综述【论文精读】"
+    },
+    {
+      "video_id": "3eXCJd32UnM",
+      "title": "OpenAI Whisper 精读【论文精读】"
+    },
+    {
+      "video_id": "5MGq7dSOghY",
+      "title": "Openai Sora 上【论文精读·55】"
+    },
+    {
+      "video_id": "6XidEHVjS1A",
+      "title": "Llama 3.1论文精读 · 4. 训练infra【论文精读·54】"
+    },
+    {
+      "video_id": "6pzBOQAXUB8",
+      "title": "多模态论文串讲·上【论文精读】"
+    },
+    {
+      "video_id": "8hS1ZtgG0wU",
+      "title": "Pathways 论文精读【论文精读】"
+    },
+    {
+      "video_id": "9lIkKiAn6uE",
+      "title": "I3D 论文精读【论文精读】"
+    },
+    {
+      "video_id": "FRFt3x0bO94",
+      "title": "ViT论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "G6gF-5g1Gg4",
+      "title": "Llama 3.1论文精读 · 3. 模型【论文精读·54】"
+    },
+    {
+      "video_id": "H4J59iG3t5o",
+      "title": "Chain of Thought论文、代码和资源【论文精读】"
+    },
+    {
+      "video_id": "J2YC0-k57NM",
+      "title": "视频理解论文串讲（下）【论文精读】"
+    },
+    {
+      "video_id": "K0SZ9mdygTw",
+      "title": "GPT-4论文精读【论文精读·53】"
+    },
+    {
+      "video_id": "K8h_xjQ6ufY",
+      "title": "斯坦福 2022 年 AI 指数报告精读【论文精读】"
+    },
+    {
+      "video_id": "NnSldWhSqvY",
+      "title": "撑起计算机视觉半边天的ResNet"
+    },
+    {
+      "video_id": "OZF1t_Hieq8",
+      "title": "CLIP 论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "Oy3OCoGUr-w",
+      "title": "AlphaFold 2 论文精读【论文精读】"
+    },
+    {
+      "video_id": "PwVlvCPDnrI",
+      "title": "在讲 OpenAI Whisper 前先做了一个剪视频小工具"
+    },
+    {
+      "video_id": "QRffZMSGJyU",
+      "title": "Neural Corpus Indexer 文档检索【论文精读】"
+    },
+    {
+      "video_id": "R_pEh6oUBKk",
+      "title": "10行代码打败90%数据科学家？"
+    },
+    {
+      "video_id": "S1le41J76lQ",
+      "title": "多模态论文串讲·下【论文精读】"
+    },
+    {
+      "video_id": "ULD3uIb2MHQ",
+      "title": "BERT 论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "WgFEw9U3BXA",
+      "title": "HELM 全面语言模型评测【论文精读·50】"
+    },
+    {
+      "video_id": "cu4439w51ik",
+      "title": "视频生成·下：模型和训练【论文精读·55】"
+    },
+    {
+      "video_id": "czFGjvhtss8",
+      "title": "Deepmind用机器学习指导数学直觉论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "eXjRpS_BTbs",
+      "title": "GPipe论文精读【论文精读】"
+    },
+    {
+      "video_id": "gK7AGO6okhc",
+      "title": "视频理解论文串讲（上）【论文精读】"
+    },
+    {
+      "video_id": "g_0HtlrLiDo",
+      "title": "GAN论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "hO57mntSMl0",
+      "title": "DALL·E 2【论文精读】"
+    },
+    {
+      "video_id": "iqX0pgNDon0",
+      "title": "Anthropic LLM 论文精读【论文精读·51】"
+    },
+    {
+      "video_id": "luP3-Fs0QCo",
+      "title": "Swin Transformer论文精读【论文精读】"
+    },
+    {
+      "video_id": "mYlX2dpdHHM",
+      "title": "MAE 论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "nzqlFIcCSWQ",
+      "title": "Transformer论文逐段精读"
+    },
+    {
+      "video_id": "oZriUGkQSNM",
+      "title": "OpenAI Codex 论文精读【论文精读】"
+    },
+    {
+      "video_id": "pWMnzCX4cwQ",
+      "title": "ResNet论文逐段精读"
+    },
+    {
+      "video_id": "pXvMXfPJZ2M",
+      "title": "MoCo 论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "q1G0xZCqYxY",
+      "title": "我是如何快速阅读和整理文献"
+    },
+    {
+      "video_id": "sejA2PtCITw",
+      "title": "零基础多图详解图神经网络（GNN/GCN）"
+    },
+    {
+      "video_id": "sh79Z8i15PI",
+      "title": "大模型时代下做科研的四个思路【论文精读·52】"
+    },
+    {
+      "video_id": "t70Bl3w7bxY",
+      "title": "GPT，GPT-2，GPT-3 论文精读【论文精读】"
+    },
+    {
+      "video_id": "t8Gzkca9pW4",
+      "title": "DeepMind AlphaCode 论文精读【论文精读】"
+    },
+    {
+      "video_id": "txjl_Q4jCyQ",
+      "title": "如何读论文"
+    },
+    {
+      "video_id": "ugJeBivv65s",
+      "title": "CLIP 改进工作串讲（下）【论文精读】"
+    },
+    {
+      "video_id": "uiMUEiilGmA",
+      "title": "给小朋友做的AI工具：把喜欢的书读出来"
+    },
+    {
+      "video_id": "vuqwKP2iDe0",
+      "title": "双流网络论文逐段精读【论文精读】"
+    },
+    {
+      "video_id": "wXFr3zIE8FM",
+      "title": "Llama 3.1论文精读 · 2. 预训练数据【论文精读·54】"
+    },
+    {
+      "video_id": "wYmlILPsLlY",
+      "title": "9年后重读深度学习奠基作之一：AlexNet【论文精读】"
+    },
+    {
+      "video_id": "x4CDhZz_Dvg",
+      "title": "CLIP 改进工作串讲（上）【论文精读】"
+    },
+    {
+      "video_id": "xt-AwUrDxQk",
+      "title": "参数服务器（Parameter Server）逐段精读【论文精读】"
+    },
+    {
+      "video_id": "zfIGAwD1jOQ",
+      "title": "InstructGPT 论文精读【论文精读】"
+    },
+    {
+      "video_id": "zjnxu8KUYKA",
+      "title": "AlexNet论文逐段精读"
+    }
+  ]
+}

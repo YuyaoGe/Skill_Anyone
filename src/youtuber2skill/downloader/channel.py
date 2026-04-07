@@ -16,6 +16,9 @@ def extract_video_urls(
     if _is_single_video(url):
         return [url]
 
+    # Normalize playlist URL: watch?v=...&list=... -> playlist?list=...
+    url = _normalize_playlist_url(url)
+
     # Channel URL — append /videos to avoid shorts/live
     if _is_channel_url(url) and "/videos" not in url:
         url = url.rstrip("/") + "/videos"
@@ -78,9 +81,20 @@ def _apply_common_opts(ydl_opts: dict, config: dict):
 
 def _is_single_video(url: str) -> bool:
     """Check if URL is a single video (not a playlist/channel)."""
-    return bool(re.search(r"watch\?v=[\w-]+$", url)) or bool(
-        re.search(r"youtu\.be/[\w-]+$", url)
+    # URLs with list= parameter are playlists, not single videos
+    if "list=" in url:
+        return False
+    return bool(re.search(r"watch\?v=[\w-]+", url)) or bool(
+        re.search(r"youtu\.be/[\w-]+", url)
     )
+
+
+def _normalize_playlist_url(url: str) -> str:
+    """Convert watch?v=...&list=... to playlist?list=... for reliable extraction."""
+    match = re.search(r"[?&]list=([\w-]+)", url)
+    if match:
+        return f"https://www.youtube.com/playlist?list={match.group(1)}"
+    return url
 
 
 def _is_channel_url(url: str) -> bool:
