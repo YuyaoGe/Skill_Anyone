@@ -1,0 +1,16 @@
+{
+  "video_id": "JXQT_vxqwIs",
+  "title": "Adam Optimization Algorithm (C2W2L08)",
+  "source": "youtube_subtitle",
+  "text": "Kind: captions Language: zh-Hans 在深度学习的发展历程中，许多 研究人员，包括一些非常 知名的研究人员，都曾 提出过优化算法，并 在一些问题上表现出色。 但这些优化算法 随后会被证明无法很好地 泛化到 你可能想要训练的各种神经网络上。 因此，我认为随着时间的推移，深度 学习社区实际上 对新的 优化算法产生了一定的怀疑。很多 人认为，像带动量的梯度 下降法这样效果很好的 算法很难找到 更好的。 而RMSprop和Atom优化 算法（我们将在本 视频中讨论）就是少数 真正经受住了考验，并在 各种 深度学习架构上都表现良好的算法之一。因此，我 毫不犹豫地推荐你尝试这些算法，因为 许多人都尝试过，并且看到它们 在许多问题上都表现出色。Atom 优化算法本质上是 将动量和RMSprop结合 起来。让我们看看它是如何 工作的。要实现Atom，首先要 初始化VGW等于0，DW等于0， 同样地，VDB等于0。 然后在迭代T中，计算 储备。 它使用 当前的小批量计算 VWB，通常 使用小批量梯度下降法， 然后进行动量指数加权 平均，所以 VTw 等于 beta。但现在我将其称为 beta1，以区别于 我们将用于 RMS 部分的超参数 beta2。 这与 我们实现 动量时完全相同，只是我现在将超 参数称为 beta1 而不是 beta。 类似地，VDB 如下所示： 1 - beta1 × DB。然后也进行 类似 rmsprop 的更新， 所以现在您有一个不同的超 参数 beta2 + 1 - beta2 × DW²。 这里的平方是 对 导数 BW 进行逐元素平方。然后 sDB 等于此值加上 1 - beta2 × DB。 这是使用超参数 2 beta1 的类似动量更新， 这是使用 超参数 beta2 的类似 rmsprop 的更新。 在典型的 Atom 实现中，你会进行 偏置校正，这样你就可以得到 更完善的校正结果。偏置 校正后，DW 等于 v DW 除以 1 - β1，即 T 次方（如果你已经 进行了 T 次迭代）。类似地，B DB 校正后 等于 V DV 除以 1 - β1 的 T 次方。然后， 你 也对 s 进行类似的偏置校正，即 s DW 除以 1 - β2 的 T 次方，s DB 校正后等于 s DB 除以 1，即 β2 的 T 次方。 最后，你执行更新，W 更新为 W - α。有时，如果 你只实现动量，你会 使用 v DW 或 VG w 校正后。但现在 我们加入了均方根传播部分，所以 我们还要除以 s DW 校正后加上 ε 的平方根。 类似地，B 的更新 公式也类似，即 DP 定向除以 s 校正后加上 ε 的平方根。因此，这个 算法 它结合了 梯度下降、动量 和均方根传播梯度下降的效果， 是一种常用的学习 算法，已被证明 对各种架构的神经网络都非常有效。 该算法有 许多超参数，学习 率超参数 α 仍然很 重要，通常需要调整， 因此您只需尝试一系列值， 看看哪个有效。β1 的默认值 是 0.9，这是移动平均值，即 DWI 的平均值。这是动量项， 高阶参数。对于 β2， Adam 论文的作者（Adam 算法的发明者） 建议使用 0.99，这表示 计算 DW² 和 DP² 的移动加权平均值。 然后是 ε，ε 的选择 并不重要， Adam 论文的作者建议使用 10 的负 8 次方，但 实际上您不需要设置此参数，它对 性能的影响很小。 但在实现 Atom 时，人们 通常直接使用默认 值。 除了β1、β2和 ε之外，我认为很少有人会 选择ε，然后尝试一系列不同的 α值来找到最佳方案。 你也可以调整β1和β2，但 我认识的从业者中很少有人这样做。那么“ Atom”这个词是怎么来的呢？Atom代表 自适应矩估计。β1 计算导数的均值， 这被称为一阶矩； β2计算 平方的指数加权平均值，这被称为 二阶矩。因此，它被 称为自适应矩估计，但 大家都简称它为Atom。 顺便一提，我的一位长期 朋友兼合作伙伴的名字叫Atom Codes。据我所知，这个算法 与他没有任何关系，只是 他 有时会用到它。不过我有点 跑题了，所以如果你 好奇的话。以上就是Atom 优化算法的全部内容。我认为用它 训练神经网络的速度会 快得多。但在本周结束之前，我们 继续讨论。 关于 超参数调优，以及对 网络优化问题的理解加深， 在下一期视频中我们将讨论 学习率衰减。",
+  "metadata": {
+    "video_id": "JXQT_vxqwIs",
+    "title": "Adam Optimization Algorithm (C2W2L08)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/2vBG4xl\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 428,
+    "url": "https://www.youtube.com/watch?v=JXQT_vxqwIs"
+  },
+  "segments": []
+}

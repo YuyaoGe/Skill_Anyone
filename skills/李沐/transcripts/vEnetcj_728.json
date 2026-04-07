@@ -1,0 +1,73 @@
+{
+  "video_id": "vEnetcj_728",
+  "source": "whisper",
+  "model": "medium",
+  "text": "(upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music) (upbeat music)",
+  "segments": [
+    {
+      "start": 0,
+      "end": 258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 3000,
+      "end": 3258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 6000,
+      "end": 6258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 9000,
+      "end": 9258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 12000,
+      "end": 12258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 15000,
+      "end": 15258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 18000,
+      "end": 18258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 21000,
+      "end": 21258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 24000,
+      "end": 24258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 27000,
+      "end": 27258,
+      "text": "(upbeat music)"
+    },
+    {
+      "start": 30000,
+      "end": 30200,
+      "text": "(upbeat music)"
+    }
+  ],
+  "metadata": {
+    "video_id": "vEnetcj_728",
+    "title": "Stable diffusion dreams of \"blueberry spaghetti\" for one night",
+    "channel": "Andrej Karpathy",
+    "upload_date": "20220816",
+    "description": "Prompt: \"blueberry spaghetti\"\nStable diffusion takes a noise vector as input and samples an image. To create this video I simply smoothly interpolate between randomly chosen noise vectors and render frames along the way.\n\nLinks\n- Stable diffusion: https://stability.ai/blog\n- Code used to make this video: https://gist.github.com/karpathy/00103b0037c5aaea32fe1da1af553355\n- My twitter: https://twitter.com/karpathy",
+    "duration": 302,
+    "url": "https://www.youtube.com/watch?v=vEnetcj_728"
+  },
+  "title": "Stable diffusion dreams of \"blueberry spaghetti\" for one night"
+}

@@ -1,0 +1,16 @@
+{
+  "video_id": "lWzo8CajF5s",
+  "title": "Bias Correction of Exponentially Weighted Averages (C2W2L05)",
+  "source": "youtube_subtitle",
+  "text": "Kind: captions Language: zh-Hans 你已经学习了如何实现 指数加权平均，这里有 一个叫做偏差校正的技术细节，它 可以使你的 平均值计算更加 准确。我们来看看它是如何工作的。 在之前的视频中，你看到了 β等于0.9和 β等于0.98的图形。但实际上， 如果你按照 这里写的公式来计算， 当β等于0.98时，你得到的并不是绿色曲线，而是紫色曲线。 你会注意到紫色曲线的 起始值非常低。所以我们来看看如何 修正这个问题。在计算 移动平均时，你需要将B0初始化为 0，然后V1等于 0.98V0+0.02θ1。但是由于 0等于0，所以这个项会被 忽略。因此，B1就是0.02乘以θ1。 这就是为什么如果第一天的 温度是华氏40度， 那么V1就是0.02乘以40，也就是 8。 这里得到的值要低得多， 所以它并不是对 第一天温度的一个很好的估计。V2 等于 0.98 乘以 B1 加上 0.02 乘以 θ2。 如果你代入 V1（就是 这里这个值）并进行乘法运算， 你会发现 B2 实际上等于 0.98 乘以 0.02 乘以 θ1 加上 0.02 乘以 θ2，也就是 0.0196 θ1 加上 0.02 θ2。所以，假设 θ1 和 θ2 是正数，那么 计算出的 B2 将远小于 θ2。因此，B2 可以 很好地估计一年中前两天的 温度。事实证明， 有一种方法可以改进 Zestimate，使其 更加准确，尤其是 在估计的初始阶段。 这种方法是： 用 VT 除以 1 - β 的 T 次方，其中 T 为温度。 当前数据就是你正在使用的数据，我们 来看一个具体的例子。当 T 等于 2 时，1 减去 Bay 的 T 次方等于 1 减去 0.98 的平方，结果为 0.006。因此，你对 第二天泰晤士河流量的估计值变为 2 除以 0.0396，也就是 0.0196 乘以 θ1 加上 0.02ζ2。你会 注意到，这两个值加起来等于分子 0.096，所以 这变成了 θ1 和 θ2 的加权平均值，从而消除了偏差。 你会注意到，随着 T 增大，βT 的值 会 趋近于 0。这就是为什么当 T 足够大时，偏差校正几乎 不起作用。这也是为什么当 T 很大时，紫线和绿线 几乎重合。但在 学习的初始阶段，当 你还在熟悉你的 估计值时，偏差校正可以帮助 你获得更准确的估计值。 温度，以及这种偏差校正，可以 帮助你从紫线过渡 到绿线。在机器学习中， 对于大多数指数 加权平均信息，人们通常不会 费心实施偏差校正， 因为大多数人宁愿 等待初始阶段，获得一个 略有偏差的估计值，然后从那里开始。但 我们关注的是 初始阶段的买家，此时指数 加权移动平均线处于 升温阶段，偏差校正 可以帮助你尽早获得更好的估计值。 现在你已经知道如何实施 指数加权移动平均线了， 让我们继续使用它来构建一些 更好的优化算法。",
+  "metadata": {
+    "video_id": "lWzo8CajF5s",
+    "title": "Bias Correction of Exponentially Weighted Averages (C2W2L05)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/3cqn45p\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 252,
+    "url": "https://www.youtube.com/watch?v=lWzo8CajF5s"
+  },
+  "segments": []
+}

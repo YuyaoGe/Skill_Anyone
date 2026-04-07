@@ -1,0 +1,48 @@
+{
+  "video_id": "Jv1ayv-04H4",
+  "source": "whisper",
+  "model": "medium",
+  "text": "[BLANK_AUDIO] [BLANK_AUDIO] [BLANK_AUDIO] [BLANK_AUDIO] [BLANK_AUDIO] [BLANK_AUDIO]",
+  "segments": [
+    {
+      "start": 0,
+      "end": 1000,
+      "text": "[BLANK_AUDIO]"
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "text": "[BLANK_AUDIO]"
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "text": "[BLANK_AUDIO]"
+    },
+    {
+      "start": 9000,
+      "end": 10000,
+      "text": "[BLANK_AUDIO]"
+    },
+    {
+      "start": 12000,
+      "end": 13000,
+      "text": "[BLANK_AUDIO]"
+    },
+    {
+      "start": 15000,
+      "end": 16000,
+      "text": "[BLANK_AUDIO]"
+    }
+  ],
+  "metadata": {
+    "video_id": "Jv1ayv-04H4",
+    "title": "Stable diffusion dreams of steam punk neural networks",
+    "channel": "Andrej Karpathy",
+    "upload_date": "20220816",
+    "description": "A stable diffusion dream. The prompt was \"ultrarealistic steam punk neural network machine in the shape of a brain, placed on a pedestal, covered with neurons made of gears. dramatic lighting. #unrealengine\"\n\nthe new and improved v2 version of this video is now here: https://www.youtube.com/watch?v=2oKjtvYslMY\n\ngenerated with this hacky script: https://gist.github.com/karpathy/00103b0037c5aaea32fe1da1af553355\n\nThe script slowly meanders through noise space to explore the space of possible generations for the fixed prompt.\n\nStable diffusion: https://stability.ai/blog/stable-diffusion-announcement",
+    "duration": 154,
+    "url": "https://www.youtube.com/watch?v=Jv1ayv-04H4"
+  },
+  "title": "Stable diffusion dreams of steam punk neural networks"
+}

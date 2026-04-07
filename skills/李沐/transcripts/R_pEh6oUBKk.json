@@ -1,0 +1,293 @@
+{
+  "video_id": "R_pEh6oUBKk",
+  "source": "whisper",
+  "model": "medium",
+  "text": "A month ago, we organized a competition for deep learning. The content is to predict how much a house costs. The data is the record of houses sold in California in 2020. For this, we provided two models based on AutoML as the base. In this month, 130 teams participated in the competition. As expected, these two AutoML models ranked first and fifth. So does this mean that the era of \"a good meal\" has ended? Now I will share with you the AutoML models we used and some of our future thoughts. The tool bag I used is AutoGluon. First, I used a popular task on the open-end to predict whether the passengers on Titanic are alive to show the installation and use of AutoGluon. We used Konda to create an environment based on Python 3.8 and activate it. Then use Peep to install AutoGluon. AutoGluon will use multiple deep learning bags to train models. Here we also installed it based on msnet's back end. Then use Peep to install Kaido. After Kaido is installed, you can download and unzip the data. Of course, you can also go to Kaido official website and click on download data. Now we can start training the model. The whole training is based on five lines of code. First, we import the tabular data set and tabular predictor from the tabular module. Next, use the tabular data set to read the data. If you use Pandas, you will find that it is actually a Pandas data friend type. Here, the sample ID exists in the ID category, and the predicted value is placed in the Survive category. The fifth line is the whole model training code. We first throw away the sample ID list, and then create a predictor to predict our label list. AutoGluon will automatically do the feature selection, and then use multiple separators to train the data. The whole training takes about a few minutes on the CPU. The next five lines of code is to predict and generate the data. We will test the data, throw away the sample ID list, and throw it into the predictor to do the prediction. The result is stored in a Pandas data friend. Finally, generate the CSV file used for the generation. We can submit it directly. After submitting, we will find that our ranking is 2,908th. Because this competition is one of the earliest competitions in the open market, it has been brushed to zero by everyone, so the ranking position is not strange. Considering that we have 36,000 teams participating, our score is actually good, around 10% After familiarizing with the basic usage, let's introduce the AutoML model for competitions. What is different here is that our data has a larger value, and the value change between samples is also large. For example, the price of the house, the price of the tax, the area of the house, etc. We take these values to log, the rest is exactly the same as before. Because the data here is far larger than before, so training will take about two hours on the CPU. This is our fifth-ranked model. The first-ranked model will do two additional optimizations. The introduction of the house in the first data is a large-scale document. We use the MultiModel option to use Transformer to extract features and do multi-model integration. Note that we need a GPU to run. Then we made multi-model integration to get better accuracy. This is our first-ranked model. Finally, we summarize three points. One is that AutoGround can get a good model under reasonable computing costs. Two is that it can do automatic feature extraction, but it is still a good way to add some artificial data to it. Three is that for larger data machines, computing costs are still flat. We need to use GPUs or even multiple machines to do distribution training. This is still the future research direction of AutoML. [SPEAKING CHINESE]",
+  "segments": [
+    {
+      "start": 0,
+      "end": 400,
+      "text": "A month ago, we organized a competition for deep learning."
+    },
+    {
+      "start": 400,
+      "end": 700,
+      "text": "The content is to predict how much a house costs."
+    },
+    {
+      "start": 700,
+      "end": 1000,
+      "text": "The data is the record of houses sold in California in 2020."
+    },
+    {
+      "start": 1000,
+      "end": 1400,
+      "text": "For this, we provided two models based on AutoML as the base."
+    },
+    {
+      "start": 1400,
+      "end": 1700,
+      "text": "In this month, 130 teams participated in the competition."
+    },
+    {
+      "start": 1700,
+      "end": 2200,
+      "text": "As expected, these two AutoML models ranked first and fifth."
+    },
+    {
+      "start": 2200,
+      "end": 2600,
+      "text": "So does this mean that the era of \"a good meal\" has ended?"
+    },
+    {
+      "start": 2600,
+      "end": 3100,
+      "text": "Now I will share with you the AutoML models we used and some of our future thoughts."
+    },
+    {
+      "start": 3100,
+      "end": 3400,
+      "text": "The tool bag I used is AutoGluon."
+    },
+    {
+      "start": 3400,
+      "end": 4100,
+      "text": "First, I used a popular task on the open-end to predict whether the passengers on Titanic are alive to show the installation and use of AutoGluon."
+    },
+    {
+      "start": 4100,
+      "end": 4500,
+      "text": "We used Konda to create an environment based on Python 3.8 and activate it."
+    },
+    {
+      "start": 4500,
+      "end": 4800,
+      "text": "Then use Peep to install AutoGluon."
+    },
+    {
+      "start": 4800,
+      "end": 5100,
+      "text": "AutoGluon will use multiple deep learning bags to train models."
+    },
+    {
+      "start": 5100,
+      "end": 5400,
+      "text": "Here we also installed it based on msnet's back end."
+    },
+    {
+      "start": 5400,
+      "end": 5600,
+      "text": "Then use Peep to install Kaido."
+    },
+    {
+      "start": 5600,
+      "end": 5900,
+      "text": "After Kaido is installed, you can download and unzip the data."
+    },
+    {
+      "start": 5900,
+      "end": 6200,
+      "text": "Of course, you can also go to Kaido official website and click on download data."
+    },
+    {
+      "start": 6200,
+      "end": 6400,
+      "text": "Now we can start training the model."
+    },
+    {
+      "start": 6400,
+      "end": 6600,
+      "text": "The whole training is based on five lines of code."
+    },
+    {
+      "start": 6600,
+      "end": 7100,
+      "text": "First, we import the tabular data set and tabular predictor from the tabular module."
+    },
+    {
+      "start": 7100,
+      "end": 7300,
+      "text": "Next, use the tabular data set to read the data."
+    },
+    {
+      "start": 7300,
+      "end": 7800,
+      "text": "If you use Pandas, you will find that it is actually a Pandas data friend type."
+    },
+    {
+      "start": 7800,
+      "end": 8300,
+      "text": "Here, the sample ID exists in the ID category, and the predicted value is placed in the Survive category."
+    },
+    {
+      "start": 8300,
+      "end": 8600,
+      "text": "The fifth line is the whole model training code."
+    },
+    {
+      "start": 8600,
+      "end": 9100,
+      "text": "We first throw away the sample ID list, and then create a predictor to predict our label list."
+    },
+    {
+      "start": 9100,
+      "end": 9500,
+      "text": "AutoGluon will automatically do the feature selection, and then use multiple separators to train the data."
+    },
+    {
+      "start": 9500,
+      "end": 9800,
+      "text": "The whole training takes about a few minutes on the CPU."
+    },
+    {
+      "start": 9800,
+      "end": 10200,
+      "text": "The next five lines of code is to predict and generate the data."
+    },
+    {
+      "start": 10200,
+      "end": 10600,
+      "text": "We will test the data, throw away the sample ID list, and throw it into the predictor to do the prediction."
+    },
+    {
+      "start": 10600,
+      "end": 10900,
+      "text": "The result is stored in a Pandas data friend."
+    },
+    {
+      "start": 10900,
+      "end": 11100,
+      "text": "Finally, generate the CSV file used for the generation."
+    },
+    {
+      "start": 11100,
+      "end": 11300,
+      "text": "We can submit it directly."
+    },
+    {
+      "start": 11300,
+      "end": 11600,
+      "text": "After submitting, we will find that our ranking is 2,908th."
+    },
+    {
+      "start": 11600,
+      "end": 11900,
+      "text": "Because this competition is one of the earliest competitions in the open market,"
+    },
+    {
+      "start": 11900,
+      "end": 12300,
+      "text": "it has been brushed to zero by everyone, so the ranking position is not strange."
+    },
+    {
+      "start": 12300,
+      "end": 12900,
+      "text": "Considering that we have 36,000 teams participating, our score is actually good, around 10%"
+    },
+    {
+      "start": 12900,
+      "end": 13400,
+      "text": "After familiarizing with the basic usage, let's introduce the AutoML model for competitions."
+    },
+    {
+      "start": 13400,
+      "end": 13900,
+      "text": "What is different here is that our data has a larger value, and the value change between samples is also large."
+    },
+    {
+      "start": 13900,
+      "end": 14300,
+      "text": "For example, the price of the house, the price of the tax, the area of the house, etc."
+    },
+    {
+      "start": 14300,
+      "end": 14700,
+      "text": "We take these values to log, the rest is exactly the same as before."
+    },
+    {
+      "start": 14700,
+      "end": 15300,
+      "text": "Because the data here is far larger than before, so training will take about two hours on the CPU."
+    },
+    {
+      "start": 15300,
+      "end": 15500,
+      "text": "This is our fifth-ranked model."
+    },
+    {
+      "start": 15500,
+      "end": 15800,
+      "text": "The first-ranked model will do two additional optimizations."
+    },
+    {
+      "start": 15800,
+      "end": 16100,
+      "text": "The introduction of the house in the first data is a large-scale document."
+    },
+    {
+      "start": 16100,
+      "end": 16700,
+      "text": "We use the MultiModel option to use Transformer to extract features and do multi-model integration."
+    },
+    {
+      "start": 16700,
+      "end": 16900,
+      "text": "Note that we need a GPU to run."
+    },
+    {
+      "start": 16900,
+      "end": 17200,
+      "text": "Then we made multi-model integration to get better accuracy."
+    },
+    {
+      "start": 17200,
+      "end": 17500,
+      "text": "This is our first-ranked model."
+    },
+    {
+      "start": 17500,
+      "end": 17700,
+      "text": "Finally, we summarize three points."
+    },
+    {
+      "start": 17700,
+      "end": 18000,
+      "text": "One is that AutoGround can get a good model under reasonable computing costs."
+    },
+    {
+      "start": 18000,
+      "end": 18600,
+      "text": "Two is that it can do automatic feature extraction, but it is still a good way to add some artificial data to it."
+    },
+    {
+      "start": 18600,
+      "end": 19000,
+      "text": "Three is that for larger data machines, computing costs are still flat."
+    },
+    {
+      "start": 19000,
+      "end": 19300,
+      "text": "We need to use GPUs or even multiple machines to do distribution training."
+    },
+    {
+      "start": 19300,
+      "end": 19500,
+      "text": "This is still the future research direction of AutoML."
+    },
+    {
+      "start": 19500,
+      "end": 19700,
+      "text": "[SPEAKING CHINESE]"
+    }
+  ],
+  "metadata": {
+    "video_id": "R_pEh6oUBKk",
+    "title": "10行代码打败90%数据科学家？",
+    "channel": "跟李沐学AI",
+    "upload_date": "20210509",
+    "description": "动手学深度学习v2直播第一次课程竞赛“官方”答案介绍\n\n竞赛地址：https://www.kaggle.com/c/california-house-prices/overview\nautogluon文档：https://auto.gluon.ai/\nautogluon代码：https://github.com/awslabs/autogluon",
+    "duration": 200,
+    "url": "https://www.youtube.com/watch?v=R_pEh6oUBKk"
+  },
+  "title": "10行代码打败90%数据科学家？"
+}

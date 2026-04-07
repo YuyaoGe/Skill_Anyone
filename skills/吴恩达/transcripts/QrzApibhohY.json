@@ -1,0 +1,16 @@
+{
+  "video_id": "QrzApibhohY",
+  "title": "Gradient Checking (C2W1L13)",
+  "source": "youtube_subtitle",
+  "text": "Kind: captions Language: zh-Hans 梯度检查这项技术 帮我节省了大量时间，并多次帮助我 找到反向传播实现中的错误。 让我们看看如何 用它来调试或验证 你的实现是否 正确。你的新网络将有 一些参数，例如 W1、V1 等等， 直到 WL、PL。要实现梯度 检查，首先应该 将所有参数重塑 为一个巨大的向量 θ。具体来说， 你应该将 矩阵 W 重塑为向量， 然后将所有这些 W1、V1、V2 和 WL 连接起来， 得到一个 巨大的向量 θ，其中包含 参数 θ。这样，成本 函数 J 就不再是 W 和 V1 的函数，而是 θ 和 W 的混合函数，并且顺序 相同。你也可以将 DW1、DB1 等等 重塑为与 θ 维度 相同的巨型向量 Dθ。所以，和 之前一样，重塑 DW1、DB ... 1. 将矩阵 EB 中的元素 重塑为向量 dwl，所有 DWS 都是 矩阵。记住，DW1 与 W1 的维度相同，DB1 是 sin 矩阵，B1 是 sin 矩阵。 因此，使用类似的重塑和 连接操作，您可以将 所有这些导数重塑为一个 与 theta 维度相同的巨型向量 Dθ。现在的问题是， Dθ 是 成本函数 J 的梯度还是斜率？如何 实现梯度检查？ 梯度检查通常缩写为 grande check。首先，请记住 J 现在是 巨型参数 theta 的函数， 对吧？因此，您也可以展开，去掉括号， J 是 theta1、theta2、theta3 等的函数，对吧？ 无论 这个巨型参数向量 theta 的维度是多少， 实现梯度检查的方法 是实现一个循环，以便 对于每个 I，即数据的每个分量， 计算 Dθ ≈ I，然后 我们将取双侧 差分，即 J 为 theta1、 theta2 到 。 我们要调整 θ I，使其加上 ε，也就是将 I 增加 ε，其他所有项 保持不变。 因为这是双侧 差分，所以我们在 另一侧也做同样的操作，保持开口减去 ε，θ 的其他元素保持不变。然后 我们将结果除以 2θ。 我们在 之前的视频中看到，这个结果应该 近似等于 Dθ I，它 应该是 G 对 I 的偏导数。 如果 Dθ I 是 成本函数 J 的导数，那么 你要做的就是 对每个 I 值都计算这个值。 最后，你会得到两个 向量：Dθ ≈，它的维度与 Dθ 相同，而 这 两个向量的维度又都与 θ 相同。 你要做的就是检查 这两个向量是否近似相等。 具体来说，我们来看一下。 如何 定义两个向量是否 真的足够接近？ 我的做法如下：首先， 计算这两个向量之间的欧氏距离 Dθ&lt;sub&gt;aprox&lt;/sub&gt; - Dθ&lt;sub&gt;aprox&lt;/sub&gt;。 注意， 这里没有平方项，所以这是 差值的平方和。然后取 平方根得到欧氏距离。为了归一化，将这 两个向量的长度除以 Dθ&lt;sub&gt; aprox&lt;/sub&gt; + Dθ&lt;sub&gt;aprox&lt;/sub&gt;，分母取欧氏距离。这样做是为了防止向量过小 或过大，因为分母会使公式 变为整数。在 实际应用中，我通常使用 ε 等于 10 的负 7 次方，也就是 10 - 7 次方。在这个 ε 值范围内， 如果公式计算 出的值小于 或等于 10 的负 7 次方，那就很好，这 意味着你的导数 近似值很可能是正确的。 这个值非常小， 可能在 10 的负 5 次方左右。我会仔细检查一下，也许 没问题，但我可能会再次检查 这个向量的各个分量， 确保没有分量 超出范围。如果这个差值的某些分量 非常大，可能 存在其他错误。如果 左边的公式值在 10 的负 3 次方左右，我 会更加 担心，可能存在错误。 你应该 得到远小于 10 减 vo 的值。如果大于 10 的负 C 次方，我会非常 担心。我非常担心是否存在类似这样的情况。 接下来，你应该查看 theta 的各个分量，看看 是否存在一个特定的 I 值，使得 D theta × I 与 D theta × I 非常不同。利用这一点来 追踪 你的导数计算是否可能存在 错误。经过一些 调试后，如果最终发现是 这种非常小的值，那么你的 实现可能是正确的。 所以在实现你的网络时，请仔细检查。 这种情况 经常发生在规划 问题和反向传播的过程中。我可能会 发现某个梯度 值相对较大，我 怀疑这可能是个 bug，于是开始调试。 调试一段 时间后，如果我发现它只是一个 数值较小的部分梯度检查，那么 你就可以更加确信它是 正确的。现在你了解了 梯度检查的工作原理，这对我 在神经网络实现中发现很多问题很有帮助。我希望这也能对你有所帮助。在下 一个视频中，我想分享 一些关于如何 实际实现梯度检查的技巧和注意事项。 让我们进入下一个视频。",
+  "metadata": {
+    "video_id": "QrzApibhohY",
+    "title": "Gradient Checking (C2W1L13)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/2vxxRu1\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 395,
+    "url": "https://www.youtube.com/watch?v=QrzApibhohY"
+  },
+  "segments": []
+}

@@ -1,0 +1,623 @@
+{
+  "video_id": "wKkcBPp3F1Y",
+  "source": "whisper",
+  "model": "medium",
+  "text": "You've now heard a lot about how to search for good hyperparameters. Before wrapping up our discussion on hyperparameter search, I want to share with you just a couple final tips and tricks for how to organize your hyperparameter search process. Deep learning today is applied to many different application areas and that intuitions about hyperparameter settings from one application area may or may not transfer to a different one. There is a lot of cross-fertilization among different applications domains. So for example, I've seen ideas developed in the computer vision community such as ConfNet or ResNet, which we'll talk about in a later course, successfully applied to speech. And I've seen ideas that were first developed in speech, successfully applied in NLP, and so on. So one nice development in deep learning is that people from different application domains do read increasingly research papers from other application domains to look for inspiration for cross-fertilization. In terms of your setting for the hyperparameters though, I've seen that intuitions do get stale. So even if you work on just one problem, say logistics, you might have found a good setting for the hyperparameters and kept on developing your algorithm or maybe seeing your data gradually change over a course of several months or maybe just upgraded the servers in your data center. And because of those changes, the best setting of your hyperparameters can get stale. So I recommend maybe just retesting or re-evaluating your hyperparameters at least once every several months to make sure that you're still happy with the values you have. Finally, in terms of how people go about searching for hyperparameters, I see maybe two major schools of thought or maybe two major different ways in which people go about it. One way is if you babysit one model. And usually you do this if you have maybe a huge data set, but not a lot of computational resources, not a lot of CPUs and GPUs, so you can basically afford to train only one model or a very small number of models at a time. In that case, you might gradually babysit that model even as it's training. So for example, on day zero, you might initialize your parameters random and then start training. And you gradually watch your learning curve, maybe the cost function j or your depth set error or something else gradually decrease over the first day. Then at the end of day one, you might say, gee, it looks like it's learning quite well. I'm going to try increasing the learning rate a little bit and see how it does. And then maybe it does better. And then that's your day two performance. And after two days, you say, oh, okay, it's still doing quite well. Maybe I'll further the momentum term a bit or decrease the learning rate a little bit now. And then you're now into day three. And every day you kind of look at it and you try nudging up and down your parameters. And maybe on one day you found your learning rate was too big. So you might go back to the previous day's model and so on. But you're kind of babysitting the model one day at a time, even as it's training over a course of many days or over the course of several different weeks. So that's one approach. And people that babysit one model that is watching a performance and, you know, patiently nudging the learning rate up or down. That's usually what happens if you don't have enough computational capacity to train a lot of models at the same time. The other approach would be if you train many models in parallel. So you might have some setting of the hyperparameters and just let it run by itself, either for a day or even for multiple days. And then get some learning curve like that. And this could be a plot of the cost function J or cost of your training error or cost your deficit error, but some metric that you're tracking. And then at the same time, you might start off a different model with a different setting of the hyperparameters. And so your second model might generate a different learning curve, maybe one that looks like that. It looks like that one looks better. And at the same time, you might train a third model, which might generate a learning curve that looks like that. And another one that maybe this one diverges, so it looks like that and so on. But you might train many different models in parallel, where these orange lines are different models, right? And so this way you can try a lot of different hyperparameter settings and then just maybe quickly at the end, pick the one that works best. Looks like in this example, it was maybe this curve that looked best. So to make an analogy, I'm going to call the approach on the left, the panda approach. You know, when pandas have children, they have very few children, usually one child at a time. And then they really put a lot of effort into making sure that the baby panda survives. So that's really babysitting, you know, one model or one baby panda. Whereas the approach on the right is more like what fish do. I'm going to call this the caviar strategy. There's some fish that lay over 100 million eggs in one season, in one mating season. But the way fish reproduce is they lay a lot of eggs and don't pay too much attention to any one of them. But, you know, just see that hopefully one of them, or maybe a bunch of them will do well. So I guess this is really the difference between how mammals reproduce versus how fish and a lot of reptiles reproduce. But I'm going to call it the panda approach versus the caviar approach, since that's more fun and memorable. So the way to choose between these two approaches is really a function of how much computational resources you have. If you have enough computers to train a lot of models in parallel, then by all means take the caviar approach and try a lot of different hyperparameters and see what works. But in some application domains, I see this in some online advertising settings, as well as in some computer vision applications, where there's just so much data and the models you want to train are so big that it's difficult to train a lot of models at the same time. It's really application dependent, of course. But I've seen those communities use the panda approach a little bit more, where you are kind of babying a single model along and nudging the parameters up and down and trying to make this one model work. Although, of course, even the panda approach, having trained one model and then seen it work or not work, maybe in the second week or the third week, maybe you actually initialize a different model and then baby that one along, just like even pandas, I guess, can have multiple children in their lifetime, even if they have only one or a very small number of children at any one time. So hopefully this gives you a good sense of how to go about the hyperparameter search process. Now, it turns out that there's one other technique that can make your neural network much more robust to the choice of hyperparameters. It doesn't work for all neural networks, but when it does, it can make the hyperparameter search much easier and also make training go much faster. Let's talk about this technique in the next video.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 424,
+      "text": "You've now heard a lot about how to search for good hyperparameters."
+    },
+    {
+      "start": 424,
+      "end": 784,
+      "text": "Before wrapping up our discussion on hyperparameter search,"
+    },
+    {
+      "start": 784,
+      "end": 1144,
+      "text": "I want to share with you just a couple final tips and tricks"
+    },
+    {
+      "start": 1144,
+      "end": 1496,
+      "text": "for how to organize your hyperparameter search process."
+    },
+    {
+      "start": 1496,
+      "end": 1896,
+      "text": "Deep learning today is applied to many different application areas"
+    },
+    {
+      "start": 1896,
+      "end": 2400,
+      "text": "and that intuitions about hyperparameter settings from one application area"
+    },
+    {
+      "start": 2400,
+      "end": 2656,
+      "text": "may or may not transfer to a different one."
+    },
+    {
+      "start": 2656,
+      "end": 3040,
+      "text": "There is a lot of cross-fertilization among different applications domains."
+    },
+    {
+      "start": 3040,
+      "end": 3496,
+      "text": "So for example, I've seen ideas developed in the computer vision community"
+    },
+    {
+      "start": 3496,
+      "end": 4032,
+      "text": "such as ConfNet or ResNet, which we'll talk about in a later course,"
+    },
+    {
+      "start": 4032,
+      "end": 4216,
+      "text": "successfully applied to speech."
+    },
+    {
+      "start": 4216,
+      "end": 4448,
+      "text": "And I've seen ideas that were first developed in speech,"
+    },
+    {
+      "start": 4448,
+      "end": 4768,
+      "text": "successfully applied in NLP, and so on."
+    },
+    {
+      "start": 4768,
+      "end": 5248,
+      "text": "So one nice development in deep learning is that people from different application domains"
+    },
+    {
+      "start": 5248,
+      "end": 5672,
+      "text": "do read increasingly research papers from other application domains"
+    },
+    {
+      "start": 5672,
+      "end": 6000,
+      "text": "to look for inspiration for cross-fertilization."
+    },
+    {
+      "start": 6000,
+      "end": 6280,
+      "text": "In terms of your setting for the hyperparameters though,"
+    },
+    {
+      "start": 6280,
+      "end": 6632,
+      "text": "I've seen that intuitions do get stale."
+    },
+    {
+      "start": 6632,
+      "end": 7024,
+      "text": "So even if you work on just one problem, say logistics,"
+    },
+    {
+      "start": 7024,
+      "end": 7304,
+      "text": "you might have found a good setting for the hyperparameters"
+    },
+    {
+      "start": 7304,
+      "end": 7896,
+      "text": "and kept on developing your algorithm or maybe seeing your data gradually change"
+    },
+    {
+      "start": 7896,
+      "end": 8488,
+      "text": "over a course of several months or maybe just upgraded the servers in your data center."
+    },
+    {
+      "start": 8488,
+      "end": 8936,
+      "text": "And because of those changes, the best setting of your hyperparameters can get stale."
+    },
+    {
+      "start": 8936,
+      "end": 9432,
+      "text": "So I recommend maybe just retesting or re-evaluating your hyperparameters"
+    },
+    {
+      "start": 9432,
+      "end": 9744,
+      "text": "at least once every several months to make sure that you're still happy"
+    },
+    {
+      "start": 9744,
+      "end": 9856,
+      "text": "with the values you have."
+    },
+    {
+      "start": 9856,
+      "end": 10304,
+      "text": "Finally, in terms of how people go about searching for hyperparameters,"
+    },
+    {
+      "start": 10304,
+      "end": 10840,
+      "text": "I see maybe two major schools of thought or maybe two major different ways"
+    },
+    {
+      "start": 10840,
+      "end": 11016,
+      "text": "in which people go about it."
+    },
+    {
+      "start": 11016,
+      "end": 11272,
+      "text": "One way is if you babysit one model."
+    },
+    {
+      "start": 11272,
+      "end": 11632,
+      "text": "And usually you do this if you have maybe a huge data set,"
+    },
+    {
+      "start": 11632,
+      "end": 12032,
+      "text": "but not a lot of computational resources, not a lot of CPUs and GPUs,"
+    },
+    {
+      "start": 12032,
+      "end": 12264,
+      "text": "so you can basically afford to train only one model"
+    },
+    {
+      "start": 12264,
+      "end": 12488,
+      "text": "or a very small number of models at a time."
+    },
+    {
+      "start": 12488,
+      "end": 13088,
+      "text": "In that case, you might gradually babysit that model even as it's training."
+    },
+    {
+      "start": 13088,
+      "end": 13504,
+      "text": "So for example, on day zero, you might initialize your parameters random"
+    },
+    {
+      "start": 13504,
+      "end": 13616,
+      "text": "and then start training."
+    },
+    {
+      "start": 13616,
+      "end": 14136,
+      "text": "And you gradually watch your learning curve, maybe the cost function j"
+    },
+    {
+      "start": 14136,
+      "end": 14664,
+      "text": "or your depth set error or something else gradually decrease over the first day."
+    },
+    {
+      "start": 14664,
+      "end": 15128,
+      "text": "Then at the end of day one, you might say, gee, it looks like it's learning quite well."
+    },
+    {
+      "start": 15128,
+      "end": 15488,
+      "text": "I'm going to try increasing the learning rate a little bit and see how it does."
+    },
+    {
+      "start": 15488,
+      "end": 15640,
+      "text": "And then maybe it does better."
+    },
+    {
+      "start": 15640,
+      "end": 15872,
+      "text": "And then that's your day two performance."
+    },
+    {
+      "start": 15872,
+      "end": 16200,
+      "text": "And after two days, you say, oh, okay, it's still doing quite well."
+    },
+    {
+      "start": 16200,
+      "end": 16568,
+      "text": "Maybe I'll further the momentum term a bit or decrease the learning rate a little bit now."
+    },
+    {
+      "start": 16616,
+      "end": 16800,
+      "text": "And then you're now into day three."
+    },
+    {
+      "start": 16800,
+      "end": 17264,
+      "text": "And every day you kind of look at it and you try nudging up and down your parameters."
+    },
+    {
+      "start": 17264,
+      "end": 17552,
+      "text": "And maybe on one day you found your learning rate was too big."
+    },
+    {
+      "start": 17552,
+      "end": 17856,
+      "text": "So you might go back to the previous day's model and so on."
+    },
+    {
+      "start": 17856,
+      "end": 18296,
+      "text": "But you're kind of babysitting the model one day at a time,"
+    },
+    {
+      "start": 18296,
+      "end": 18800,
+      "text": "even as it's training over a course of many days or over the course of several different weeks."
+    },
+    {
+      "start": 18800,
+      "end": 18944,
+      "text": "So that's one approach."
+    },
+    {
+      "start": 18944,
+      "end": 19408,
+      "text": "And people that babysit one model that is watching a performance and,"
+    },
+    {
+      "start": 19408,
+      "end": 19736,
+      "text": "you know, patiently nudging the learning rate up or down."
+    },
+    {
+      "start": 19736,
+      "end": 19968,
+      "text": "That's usually what happens if you don't have enough"
+    },
+    {
+      "start": 19968,
+      "end": 20408,
+      "text": "computational capacity to train a lot of models at the same time."
+    },
+    {
+      "start": 20408,
+      "end": 20840,
+      "text": "The other approach would be if you train many models in parallel."
+    },
+    {
+      "start": 20840,
+      "end": 21336,
+      "text": "So you might have some setting of the hyperparameters and just let it run by itself,"
+    },
+    {
+      "start": 21336,
+      "end": 21592,
+      "text": "either for a day or even for multiple days."
+    },
+    {
+      "start": 21592,
+      "end": 21784,
+      "text": "And then get some learning curve like that."
+    },
+    {
+      "start": 21784,
+      "end": 22256,
+      "text": "And this could be a plot of the cost function J or cost of your training error or cost your"
+    },
+    {
+      "start": 22256,
+      "end": 22496,
+      "text": "deficit error, but some metric that you're tracking."
+    },
+    {
+      "start": 22496,
+      "end": 22800,
+      "text": "And then at the same time, you might start off a different model"
+    },
+    {
+      "start": 22800,
+      "end": 23016,
+      "text": "with a different setting of the hyperparameters."
+    },
+    {
+      "start": 23016,
+      "end": 23352,
+      "text": "And so your second model might generate a different learning curve,"
+    },
+    {
+      "start": 23352,
+      "end": 23568,
+      "text": "maybe one that looks like that."
+    },
+    {
+      "start": 23568,
+      "end": 23736,
+      "text": "It looks like that one looks better."
+    },
+    {
+      "start": 23736,
+      "end": 23960,
+      "text": "And at the same time, you might train a third model,"
+    },
+    {
+      "start": 23960,
+      "end": 24272,
+      "text": "which might generate a learning curve that looks like that."
+    },
+    {
+      "start": 24272,
+      "end": 24688,
+      "text": "And another one that maybe this one diverges, so it looks like that and so on."
+    },
+    {
+      "start": 24688,
+      "end": 25032,
+      "text": "But you might train many different models in parallel,"
+    },
+    {
+      "start": 25032,
+      "end": 25312,
+      "text": "where these orange lines are different models, right?"
+    },
+    {
+      "start": 25312,
+      "end": 25640,
+      "text": "And so this way you can try a lot of different hyperparameter settings"
+    },
+    {
+      "start": 25640,
+      "end": 26096,
+      "text": "and then just maybe quickly at the end, pick the one that works best."
+    },
+    {
+      "start": 26096,
+      "end": 26552,
+      "text": "Looks like in this example, it was maybe this curve that looked best."
+    },
+    {
+      "start": 26552,
+      "end": 27072,
+      "text": "So to make an analogy, I'm going to call the approach on the left, the panda approach."
+    },
+    {
+      "start": 27072,
+      "end": 27424,
+      "text": "You know, when pandas have children, they have very few children,"
+    },
+    {
+      "start": 27424,
+      "end": 27576,
+      "text": "usually one child at a time."
+    },
+    {
+      "start": 27576,
+      "end": 27968,
+      "text": "And then they really put a lot of effort into making sure that the baby panda survives."
+    },
+    {
+      "start": 28032,
+      "end": 28416,
+      "text": "So that's really babysitting, you know, one model or one baby panda."
+    },
+    {
+      "start": 28416,
+      "end": 28752,
+      "text": "Whereas the approach on the right is more like what fish do."
+    },
+    {
+      "start": 28752,
+      "end": 29024,
+      "text": "I'm going to call this the caviar strategy."
+    },
+    {
+      "start": 29024,
+      "end": 29552,
+      "text": "There's some fish that lay over 100 million eggs in one season, in one mating season."
+    },
+    {
+      "start": 29552,
+      "end": 29840,
+      "text": "But the way fish reproduce is they lay a lot of eggs"
+    },
+    {
+      "start": 29840,
+      "end": 30112,
+      "text": "and don't pay too much attention to any one of them."
+    },
+    {
+      "start": 30112,
+      "end": 30392,
+      "text": "But, you know, just see that hopefully one of them,"
+    },
+    {
+      "start": 30392,
+      "end": 30592,
+      "text": "or maybe a bunch of them will do well."
+    },
+    {
+      "start": 30592,
+      "end": 31080,
+      "text": "So I guess this is really the difference between how mammals reproduce"
+    },
+    {
+      "start": 31080,
+      "end": 31488,
+      "text": "versus how fish and a lot of reptiles reproduce."
+    },
+    {
+      "start": 31488,
+      "end": 31792,
+      "text": "But I'm going to call it the panda approach versus the caviar approach,"
+    },
+    {
+      "start": 31792,
+      "end": 32008,
+      "text": "since that's more fun and memorable."
+    },
+    {
+      "start": 32008,
+      "end": 32224,
+      "text": "So the way to choose between these two approaches"
+    },
+    {
+      "start": 32224,
+      "end": 32640,
+      "text": "is really a function of how much computational resources you have."
+    },
+    {
+      "start": 32640,
+      "end": 33040,
+      "text": "If you have enough computers to train a lot of models in parallel,"
+    },
+    {
+      "start": 33040,
+      "end": 33408,
+      "text": "then by all means take the caviar approach"
+    },
+    {
+      "start": 33408,
+      "end": 33760,
+      "text": "and try a lot of different hyperparameters and see what works."
+    },
+    {
+      "start": 33760,
+      "end": 34240,
+      "text": "But in some application domains, I see this in some online advertising settings,"
+    },
+    {
+      "start": 34240,
+      "end": 34504,
+      "text": "as well as in some computer vision applications,"
+    },
+    {
+      "start": 34504,
+      "end": 34888,
+      "text": "where there's just so much data and the models you want to train are so big"
+    },
+    {
+      "start": 34888,
+      "end": 35216,
+      "text": "that it's difficult to train a lot of models at the same time."
+    },
+    {
+      "start": 35216,
+      "end": 35544,
+      "text": "It's really application dependent, of course."
+    },
+    {
+      "start": 35544,
+      "end": 36000,
+      "text": "But I've seen those communities use the panda approach a little bit more,"
+    },
+    {
+      "start": 36000,
+      "end": 36288,
+      "text": "where you are kind of babying a single model along"
+    },
+    {
+      "start": 36288,
+      "end": 36464,
+      "text": "and nudging the parameters up and down"
+    },
+    {
+      "start": 36464,
+      "end": 36752,
+      "text": "and trying to make this one model work."
+    },
+    {
+      "start": 36752,
+      "end": 37080,
+      "text": "Although, of course, even the panda approach,"
+    },
+    {
+      "start": 37080,
+      "end": 37360,
+      "text": "having trained one model and then seen it work or not work,"
+    },
+    {
+      "start": 37360,
+      "end": 37544,
+      "text": "maybe in the second week or the third week,"
+    },
+    {
+      "start": 37544,
+      "end": 37744,
+      "text": "maybe you actually initialize a different model"
+    },
+    {
+      "start": 37744,
+      "end": 38144,
+      "text": "and then baby that one along, just like even pandas,"
+    },
+    {
+      "start": 38144,
+      "end": 38376,
+      "text": "I guess, can have multiple children in their lifetime,"
+    },
+    {
+      "start": 38376,
+      "end": 38864,
+      "text": "even if they have only one or a very small number of children at any one time."
+    },
+    {
+      "start": 38864,
+      "end": 39120,
+      "text": "So hopefully this gives you a good sense of how to go about"
+    },
+    {
+      "start": 39120,
+      "end": 39304,
+      "text": "the hyperparameter search process."
+    },
+    {
+      "start": 39304,
+      "end": 39672,
+      "text": "Now, it turns out that there's one other technique"
+    },
+    {
+      "start": 39672,
+      "end": 39952,
+      "text": "that can make your neural network much more robust"
+    },
+    {
+      "start": 39952,
+      "end": 40120,
+      "text": "to the choice of hyperparameters."
+    },
+    {
+      "start": 40120,
+      "end": 40288,
+      "text": "It doesn't work for all neural networks,"
+    },
+    {
+      "start": 40288,
+      "end": 40616,
+      "text": "but when it does, it can make the hyperparameter search much easier"
+    },
+    {
+      "start": 40616,
+      "end": 40848,
+      "text": "and also make training go much faster."
+    },
+    {
+      "start": 40848,
+      "end": 41152,
+      "text": "Let's talk about this technique in the next video."
+    }
+  ],
+  "metadata": {
+    "video_id": "wKkcBPp3F1Y",
+    "title": "Hyperparameter Tuning in Practice (C2W3L03)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/2VF2f00\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 412,
+    "url": "https://www.youtube.com/watch?v=wKkcBPp3F1Y"
+  },
+  "title": "Hyperparameter Tuning in Practice (C2W3L03)"
+}

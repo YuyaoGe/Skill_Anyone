@@ -1,0 +1,973 @@
+{
+  "video_id": "NnSldWhSqvY",
+  "source": "whisper",
+  "model": "medium",
+  "text": "Hello everyone, today is the second episode of our series of reading and reading. We chose another classic book by the Department of Deep Learning, ResNet. This article was published in 2015, but if you are still using the Deep-Level Brain Network today, then half the possibility is that you are using ResNet or its variant. So let's read carefully the article that ResNet has proposed. We still use the reading method of two or three times as before. Let's assume that we go back to the past and read the article from a first-person perspective. We will also go back to the present and see if the conclusions in the paper have been passed or are still established. First, let's look at the title of the article. The first title is Deep Resition Learning. This is the core idea behind ResNet. The second is image recognition, which is the image classification. This is the biggest application of the computer vision. Next, let's look at the authors. The authors are He Kaiming, Zhang Xiangyu, Ren Shaoqing and Sun Jian. From the current perspective, these four people are very famous. At that time, they were at the Microsoft Asia Institute. From the email, the two authors in the middle should be students. Their emails are all from V字. Microsoft Asia Institute is also a very magical place. It was a company that was still purely focused on academic research. It is also a few companies that can spend a lot of money to raise a pure research institute. I also did my internship at Microsoft Asia Institute 15 years ago. It was a very pleasant experience. Next, let's look at the articles. The first sentence of the article is that the deep neural network is very difficult to train. This is the question that was raised. The second sentence is what we did. We made a framework for using the gap learning to train the very deep network. It's much easier than before. This is the focus of this article. Next, he talks about the method they proposed. He said that he put these layers as a method of learning the gap function relative to the input of the layer. It's not the same as before, but the same function as the reference. Before you read this article, you don't know what he's talking about. Anyway, you know that there is a key word, residual. After all, this residual also appears in the title. Next, we provide a lot of experimental evidence that our gap networks are very easy to train. And it can get a very good accuracy. Especially when you increase the layers, they used 152 layers on the image net. This number is also very exaggerated. Although it was already on Google net at the time, but it's not 152 layers deep. It has a lot of parallel layers. He said that I have 152 layers deep. This is very powerful. He said that I'm eight times more than VGG. But there is a lower complexity. This thing is more interesting. I'm eight times deeper than you, but the calculation complexity is even lower. Then he said that after using these residual networks to make an ensemble, he got a 3.57 test accuracy. This result made them win the Imagenet 2015 competition. Then they also demonstrated how to train thousands of layers of network on CIFAR. I think these two results are interesting. The first result is that I won the Imagenet competition. We talked about AlexNet last time, which is the second or third Imagenet competition. This is another result. Any article that can win the championship or even the Asian championship is worth your attention. Especially those articles that have different structures and methods are usually criticized. So if you see this sentence, you usually choose to continue reading. Another interesting thing is that in CIFAR10, this is a very small computer, but it is also the most common computer in computer vision. It trains 100 to 1000 layers of network. This is very exaggerated. You may have never seen what a thousand-layer network looks like before. The second thing is that depth is very important for many visual tasks. The second sentence is that I just changed my network to the one we learned before. We got a 28% improvement. What level is it? It's on the COCO target test level. It also won the first place in the image net test, localization, and COCO detection. So this is also a very good result. I just changed the main network of CN behind you into the network we proposed. I can get very good results in this series of tasks and won the first place in the competition. If you do physical tests, you will know that COCO should be the biggest and most famous computer. According to our method, we will look at its conclusion. What's more interesting is that this article has no conclusion. This article is published on CIFAR. CIFAR requires that the certificate of each article cannot exceed 8 pages. The results of this article are relatively more, because it will put my image net test and the results of my COCO and target detection. So the author has no space to put down his conclusion. So this is also a very unusual method. I suggest that you don't learn the conclusion. If you don't have a conclusion, you will feel weird. So if there is no conclusion, let's take a look at what the formula and table are. Let's first look at the first picture of our thesis. The first picture of the thesis appears in the upper right corner of the thesis. This is the algorithm of the computer visual theory. Generally, we will put a better picture on the first page. Whether it is a description of this problem or the main result of my thesis, the better it looks, the better it is. So if you look at the article of the computer visual theory, you can see what the picture is drawing first. Of course, it is more interesting if you look at the article of the computer graph theory, it is possible to put a picture on the title. Because for graph theory, vision is more important. So it has to put the best-seeing result on the top. It is said that Randy is the first person who started this style. He is a professor at CMU. Of course, his most famous event is that he took the last class. This class is very, very famous. This is the last class he took for CMU students after he got cancer. It talks about his childhood dreams and how he realized these dreams. Very touching. I recommend you to read it. Of course, I have a very deep impression of Randy. Because I passed by a bridge every day when I was in CMU. The bridge is named after him. The bridge is a rainbow color, very dazzling. I can watch it for a long time every night when I pass by it. Let's take a look at this picture. This picture describes a very interesting thing. He said, \"Our left picture is my training object. My right picture is my test object. It is on CIFAR-10.\" He said, \"I used a plane network of 20 and 56 layers. I didn't add your cross-sectional network. You can see that your X-axis is your number, your Y-axis is your error rate. You can see that 56 layers, which is a deeper and larger network, have higher error rates. So you can see that you are not training. It's not just a cross-sectional network. It's more of a training error. It can't have a good effect. So the first sentence in this article is \"Training a very deep neural network is a very difficult thing.\" The main concern of this article is how to train a deeper neural network more easily. So this picture shows an observed phenomenon. He wants to solve this problem. We can turn this picture down. The second picture shows the implementation of the structure. We can show this picture later when we talk about the method. You can turn this picture down. You can see a very long picture of the structure. Generally speaking, we would draw out the structure of the network. So you can choose to take a look. If you are not familiar with the structure, it's okay to take a look later. Then we have the table and the picture. You can see the experimental results. The experimental results are related to the previous picture. This is on the ImageNet database. It's the same as when we didn't add the cross-sectional network. We used the results of 18 layers and 34 layers. This is when we added the ResNet that he proposed. You can see that when you didn't add the residual cross-sectional network, 34 layers of network, actually 18 layers of network, were higher than the training error. That is, the results of CIFAR before. The following picture is the core picture of the whole thesis. He said that after using this method, the error is lower. This should be the test accuracy. This is your training accuracy. So you can see that whether it's training accuracy or test accuracy, the difference is obvious when you add it. But there are some conclusions of the table of this picture. Generally speaking, the picture is a straightforward expression. But we can write these numbers in detail on the table. This is the same thing. I have two different ways to express things. Each has its own use. There is more information in the picture. But the numbers on the table are important to everyone. Especially if you compare the article with the user behind you, he can use these numbers. So you see that the result of the ResNet of 34 layers, the top one error rate is 25.3%. But if you don't add it, you're 28%. So the difference is still quite big. If you look at the back, you can see more results. This is the result of ResNet 152. Of course, if you look at it below, it's compared with some other results. Its 152 layers result is compared with the results of GoogleNet and VGT in the last competition. You can see that it will still be much lower. It's almost 7.89% to 4.5%. It's down to 34%. It's also very powerful. This is the result of the last competition in 2015. It's probably 3.57%. And this result is basically to the limit of human. But there are some results on CIFAR. It's basically the same as the previous model. Mainly, how good is my effect? This is a very simple introduction to this article. We will give you a detailed look at each part of this article.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 400,
+      "text": "Hello everyone, today is the second episode of our series of reading and reading."
+    },
+    {
+      "start": 400,
+      "end": 900,
+      "text": "We chose another classic book by the Department of Deep Learning, ResNet."
+    },
+    {
+      "start": 900,
+      "end": 1500,
+      "text": "This article was published in 2015, but if you are still using the Deep-Level Brain Network today,"
+    },
+    {
+      "start": 1500,
+      "end": 1900,
+      "text": "then half the possibility is that you are using ResNet or its variant."
+    },
+    {
+      "start": 1900,
+      "end": 2300,
+      "text": "So let's read carefully the article that ResNet has proposed."
+    },
+    {
+      "start": 2300,
+      "end": 2700,
+      "text": "We still use the reading method of two or three times as before."
+    },
+    {
+      "start": 2700,
+      "end": 3500,
+      "text": "Let's assume that we go back to the past and read the article from a first-person perspective."
+    },
+    {
+      "start": 3500,
+      "end": 4300,
+      "text": "We will also go back to the present and see if the conclusions in the paper have been passed or are still established."
+    },
+    {
+      "start": 4300,
+      "end": 4600,
+      "text": "First, let's look at the title of the article."
+    },
+    {
+      "start": 4600,
+      "end": 4800,
+      "text": "The first title is Deep Resition Learning."
+    },
+    {
+      "start": 4800,
+      "end": 5200,
+      "text": "This is the core idea behind ResNet."
+    },
+    {
+      "start": 5200,
+      "end": 5500,
+      "text": "The second is image recognition, which is the image classification."
+    },
+    {
+      "start": 5500,
+      "end": 5800,
+      "text": "This is the biggest application of the computer vision."
+    },
+    {
+      "start": 5800,
+      "end": 5900,
+      "text": "Next, let's look at the authors."
+    },
+    {
+      "start": 5900,
+      "end": 6400,
+      "text": "The authors are He Kaiming, Zhang Xiangyu, Ren Shaoqing and Sun Jian."
+    },
+    {
+      "start": 6400,
+      "end": 6700,
+      "text": "From the current perspective, these four people are very famous."
+    },
+    {
+      "start": 6700,
+      "end": 7100,
+      "text": "At that time, they were at the Microsoft Asia Institute."
+    },
+    {
+      "start": 7100,
+      "end": 7500,
+      "text": "From the email, the two authors in the middle should be students."
+    },
+    {
+      "start": 7500,
+      "end": 7700,
+      "text": "Their emails are all from V字."
+    },
+    {
+      "start": 7700,
+      "end": 8100,
+      "text": "Microsoft Asia Institute is also a very magical place."
+    },
+    {
+      "start": 8100,
+      "end": 8500,
+      "text": "It was a company that was still purely focused on academic research."
+    },
+    {
+      "start": 8500,
+      "end": 9100,
+      "text": "It is also a few companies that can spend a lot of money to raise a pure research institute."
+    },
+    {
+      "start": 9100,
+      "end": 9400,
+      "text": "I also did my internship at Microsoft Asia Institute 15 years ago."
+    },
+    {
+      "start": 9400,
+      "end": 9600,
+      "text": "It was a very pleasant experience."
+    },
+    {
+      "start": 9600,
+      "end": 9900,
+      "text": "Next, let's look at the articles."
+    },
+    {
+      "start": 9900,
+      "end": 10500,
+      "text": "The first sentence of the article is that the deep neural network is very difficult to train."
+    },
+    {
+      "start": 10500,
+      "end": 10800,
+      "text": "This is the question that was raised."
+    },
+    {
+      "start": 10800,
+      "end": 11000,
+      "text": "The second sentence is what we did."
+    },
+    {
+      "start": 11000,
+      "end": 11900,
+      "text": "We made a framework for using the gap learning to train the very deep network."
+    },
+    {
+      "start": 11900,
+      "end": 12100,
+      "text": "It's much easier than before."
+    },
+    {
+      "start": 12100,
+      "end": 12400,
+      "text": "This is the focus of this article."
+    },
+    {
+      "start": 12400,
+      "end": 12700,
+      "text": "Next, he talks about the method they proposed."
+    },
+    {
+      "start": 12700,
+      "end": 13700,
+      "text": "He said that he put these layers as a method of learning the gap function relative to the input of the layer."
+    },
+    {
+      "start": 13700,
+      "end": 14200,
+      "text": "It's not the same as before, but the same function as the reference."
+    },
+    {
+      "start": 14200,
+      "end": 14600,
+      "text": "Before you read this article, you don't know what he's talking about."
+    },
+    {
+      "start": 14600,
+      "end": 14900,
+      "text": "Anyway, you know that there is a key word, residual."
+    },
+    {
+      "start": 14900,
+      "end": 15200,
+      "text": "After all, this residual also appears in the title."
+    },
+    {
+      "start": 15200,
+      "end": 16100,
+      "text": "Next, we provide a lot of experimental evidence that our gap networks are very easy to train."
+    },
+    {
+      "start": 16100,
+      "end": 16400,
+      "text": "And it can get a very good accuracy."
+    },
+    {
+      "start": 16400,
+      "end": 16700,
+      "text": "Especially when you increase the layers,"
+    },
+    {
+      "start": 16700,
+      "end": 17300,
+      "text": "they used 152 layers on the image net."
+    },
+    {
+      "start": 17300,
+      "end": 17500,
+      "text": "This number is also very exaggerated."
+    },
+    {
+      "start": 17500,
+      "end": 18000,
+      "text": "Although it was already on Google net at the time,"
+    },
+    {
+      "start": 18000,
+      "end": 18400,
+      "text": "but it's not 152 layers deep."
+    },
+    {
+      "start": 18400,
+      "end": 18600,
+      "text": "It has a lot of parallel layers."
+    },
+    {
+      "start": 18600,
+      "end": 18900,
+      "text": "He said that I have 152 layers deep."
+    },
+    {
+      "start": 18900,
+      "end": 19000,
+      "text": "This is very powerful."
+    },
+    {
+      "start": 19000,
+      "end": 19400,
+      "text": "He said that I'm eight times more than VGG."
+    },
+    {
+      "start": 19400,
+      "end": 19700,
+      "text": "But there is a lower complexity."
+    },
+    {
+      "start": 19700,
+      "end": 19900,
+      "text": "This thing is more interesting."
+    },
+    {
+      "start": 19900,
+      "end": 20300,
+      "text": "I'm eight times deeper than you, but the calculation complexity is even lower."
+    },
+    {
+      "start": 20300,
+      "end": 20700,
+      "text": "Then he said that after using these residual networks to make an ensemble,"
+    },
+    {
+      "start": 20700,
+      "end": 21200,
+      "text": "he got a 3.57 test accuracy."
+    },
+    {
+      "start": 21200,
+      "end": 21800,
+      "text": "This result made them win the Imagenet 2015 competition."
+    },
+    {
+      "start": 21800,
+      "end": 22500,
+      "text": "Then they also demonstrated how to train thousands of layers of network on CIFAR."
+    },
+    {
+      "start": 22500,
+      "end": 22700,
+      "text": "I think these two results are interesting."
+    },
+    {
+      "start": 22700,
+      "end": 23000,
+      "text": "The first result is that I won the Imagenet competition."
+    },
+    {
+      "start": 23000,
+      "end": 23600,
+      "text": "We talked about AlexNet last time, which is the second or third Imagenet competition."
+    },
+    {
+      "start": 23600,
+      "end": 23800,
+      "text": "This is another result."
+    },
+    {
+      "start": 23800,
+      "end": 24400,
+      "text": "Any article that can win the championship or even the Asian championship is worth your attention."
+    },
+    {
+      "start": 24400,
+      "end": 25000,
+      "text": "Especially those articles that have different structures and methods are usually criticized."
+    },
+    {
+      "start": 25000,
+      "end": 25400,
+      "text": "So if you see this sentence, you usually choose to continue reading."
+    },
+    {
+      "start": 25400,
+      "end": 25900,
+      "text": "Another interesting thing is that in CIFAR10, this is a very small computer,"
+    },
+    {
+      "start": 25900,
+      "end": 26200,
+      "text": "but it is also the most common computer in computer vision."
+    },
+    {
+      "start": 26200,
+      "end": 26500,
+      "text": "It trains 100 to 1000 layers of network."
+    },
+    {
+      "start": 26500,
+      "end": 26600,
+      "text": "This is very exaggerated."
+    },
+    {
+      "start": 26600,
+      "end": 26900,
+      "text": "You may have never seen what a thousand-layer network looks like before."
+    },
+    {
+      "start": 26900,
+      "end": 27600,
+      "text": "The second thing is that depth is very important for many visual tasks."
+    },
+    {
+      "start": 27600,
+      "end": 28300,
+      "text": "The second sentence is that I just changed my network to the one we learned before."
+    },
+    {
+      "start": 28300,
+      "end": 28800,
+      "text": "We got a 28% improvement."
+    },
+    {
+      "start": 28800,
+      "end": 28900,
+      "text": "What level is it?"
+    },
+    {
+      "start": 28900,
+      "end": 29200,
+      "text": "It's on the COCO target test level."
+    },
+    {
+      "start": 29200,
+      "end": 30300,
+      "text": "It also won the first place in the image net test, localization, and COCO detection."
+    },
+    {
+      "start": 30300,
+      "end": 30500,
+      "text": "So this is also a very good result."
+    },
+    {
+      "start": 30500,
+      "end": 31100,
+      "text": "I just changed the main network of CN behind you into the network we proposed."
+    },
+    {
+      "start": 31100,
+      "end": 31700,
+      "text": "I can get very good results in this series of tasks and won the first place in the competition."
+    },
+    {
+      "start": 31700,
+      "end": 32300,
+      "text": "If you do physical tests, you will know that COCO should be the biggest and most famous computer."
+    },
+    {
+      "start": 32300,
+      "end": 32700,
+      "text": "According to our method, we will look at its conclusion."
+    },
+    {
+      "start": 32700,
+      "end": 33000,
+      "text": "What's more interesting is that this article has no conclusion."
+    },
+    {
+      "start": 33000,
+      "end": 33200,
+      "text": "This article is published on CIFAR."
+    },
+    {
+      "start": 33200,
+      "end": 33500,
+      "text": "CIFAR requires that the certificate of each article cannot exceed 8 pages."
+    },
+    {
+      "start": 33500,
+      "end": 33800,
+      "text": "The results of this article are relatively more,"
+    },
+    {
+      "start": 33800,
+      "end": 34400,
+      "text": "because it will put my image net test and the results of my COCO and target detection."
+    },
+    {
+      "start": 34400,
+      "end": 34800,
+      "text": "So the author has no space to put down his conclusion."
+    },
+    {
+      "start": 34800,
+      "end": 35100,
+      "text": "So this is also a very unusual method."
+    },
+    {
+      "start": 35100,
+      "end": 35300,
+      "text": "I suggest that you don't learn the conclusion."
+    },
+    {
+      "start": 35300,
+      "end": 35700,
+      "text": "If you don't have a conclusion, you will feel weird."
+    },
+    {
+      "start": 35700,
+      "end": 36200,
+      "text": "So if there is no conclusion, let's take a look at what the formula and table are."
+    },
+    {
+      "start": 36200,
+      "end": 36600,
+      "text": "Let's first look at the first picture of our thesis."
+    },
+    {
+      "start": 36600,
+      "end": 37000,
+      "text": "The first picture of the thesis appears in the upper right corner of the thesis."
+    },
+    {
+      "start": 37000,
+      "end": 37300,
+      "text": "This is the algorithm of the computer visual theory."
+    },
+    {
+      "start": 37300,
+      "end": 37700,
+      "text": "Generally, we will put a better picture on the first page."
+    },
+    {
+      "start": 37700,
+      "end": 38100,
+      "text": "Whether it is a description of this problem or the main result of my thesis,"
+    },
+    {
+      "start": 38100,
+      "end": 38300,
+      "text": "the better it looks, the better it is."
+    },
+    {
+      "start": 38300,
+      "end": 38500,
+      "text": "So if you look at the article of the computer visual theory,"
+    },
+    {
+      "start": 38500,
+      "end": 38800,
+      "text": "you can see what the picture is drawing first."
+    },
+    {
+      "start": 38800,
+      "end": 39200,
+      "text": "Of course, it is more interesting if you look at the article of the computer graph theory,"
+    },
+    {
+      "start": 39200,
+      "end": 39600,
+      "text": "it is possible to put a picture on the title."
+    },
+    {
+      "start": 39600,
+      "end": 39900,
+      "text": "Because for graph theory, vision is more important."
+    },
+    {
+      "start": 39900,
+      "end": 40200,
+      "text": "So it has to put the best-seeing result on the top."
+    },
+    {
+      "start": 40200,
+      "end": 40600,
+      "text": "It is said that Randy is the first person who started this style."
+    },
+    {
+      "start": 40600,
+      "end": 40800,
+      "text": "He is a professor at CMU."
+    },
+    {
+      "start": 40800,
+      "end": 41100,
+      "text": "Of course, his most famous event is that he took the last class."
+    },
+    {
+      "start": 41100,
+      "end": 41400,
+      "text": "This class is very, very famous."
+    },
+    {
+      "start": 41400,
+      "end": 41900,
+      "text": "This is the last class he took for CMU students after he got cancer."
+    },
+    {
+      "start": 41900,
+      "end": 42400,
+      "text": "It talks about his childhood dreams and how he realized these dreams."
+    },
+    {
+      "start": 42400,
+      "end": 42700,
+      "text": "Very touching. I recommend you to read it."
+    },
+    {
+      "start": 42700,
+      "end": 42900,
+      "text": "Of course, I have a very deep impression of Randy."
+    },
+    {
+      "start": 42900,
+      "end": 43200,
+      "text": "Because I passed by a bridge every day when I was in CMU."
+    },
+    {
+      "start": 43200,
+      "end": 43400,
+      "text": "The bridge is named after him."
+    },
+    {
+      "start": 43400,
+      "end": 43700,
+      "text": "The bridge is a rainbow color, very dazzling."
+    },
+    {
+      "start": 43700,
+      "end": 44000,
+      "text": "I can watch it for a long time every night when I pass by it."
+    },
+    {
+      "start": 44000,
+      "end": 44200,
+      "text": "Let's take a look at this picture."
+    },
+    {
+      "start": 44200,
+      "end": 44500,
+      "text": "This picture describes a very interesting thing."
+    },
+    {
+      "start": 44500,
+      "end": 44900,
+      "text": "He said, \"Our left picture is my training object."
+    },
+    {
+      "start": 44900,
+      "end": 45300,
+      "text": "My right picture is my test object. It is on CIFAR-10.\""
+    },
+    {
+      "start": 45300,
+      "end": 45800,
+      "text": "He said, \"I used a plane network of 20 and 56 layers."
+    },
+    {
+      "start": 45800,
+      "end": 46334,
+      "text": "I didn't add your"
+    },
+    {
+      "start": 46334,
+      "end": 46700,
+      "text": "cross-sectional network."
+    },
+    {
+      "start": 46700,
+      "end": 47200,
+      "text": "You can see that your X-axis is your number,"
+    },
+    {
+      "start": 47200,
+      "end": 47600,
+      "text": "your Y-axis is your error rate."
+    },
+    {
+      "start": 47600,
+      "end": 48100,
+      "text": "You can see that 56 layers, which is a deeper and larger network,"
+    },
+    {
+      "start": 48100,
+      "end": 48400,
+      "text": "have higher error rates."
+    },
+    {
+      "start": 48400,
+      "end": 48800,
+      "text": "So you can see that you are not training."
+    },
+    {
+      "start": 48800,
+      "end": 49100,
+      "text": "It's not just a cross-sectional network."
+    },
+    {
+      "start": 49100,
+      "end": 49300,
+      "text": "It's more of a training error."
+    },
+    {
+      "start": 49300,
+      "end": 49500,
+      "text": "It can't have a good effect."
+    },
+    {
+      "start": 49500,
+      "end": 49800,
+      "text": "So the first sentence in this article is"
+    },
+    {
+      "start": 49800,
+      "end": 50100,
+      "text": "\"Training a very deep neural network is a very difficult thing.\""
+    },
+    {
+      "start": 50100,
+      "end": 50300,
+      "text": "The main concern of this article is"
+    },
+    {
+      "start": 50300,
+      "end": 50600,
+      "text": "how to train a deeper neural network more easily."
+    },
+    {
+      "start": 50600,
+      "end": 50900,
+      "text": "So this picture shows an observed phenomenon."
+    },
+    {
+      "start": 50900,
+      "end": 51100,
+      "text": "He wants to solve this problem."
+    },
+    {
+      "start": 51100,
+      "end": 51400,
+      "text": "We can turn this picture down."
+    },
+    {
+      "start": 51400,
+      "end": 51800,
+      "text": "The second picture shows the implementation of the structure."
+    },
+    {
+      "start": 51800,
+      "end": 52200,
+      "text": "We can show this picture later when we talk about the method."
+    },
+    {
+      "start": 52200,
+      "end": 52500,
+      "text": "You can turn this picture down."
+    },
+    {
+      "start": 52500,
+      "end": 53000,
+      "text": "You can see a very long picture of the structure."
+    },
+    {
+      "start": 53000,
+      "end": 53500,
+      "text": "Generally speaking, we would draw out the structure of the network."
+    },
+    {
+      "start": 53500,
+      "end": 53800,
+      "text": "So you can choose to take a look."
+    },
+    {
+      "start": 53800,
+      "end": 54100,
+      "text": "If you are not familiar with the structure,"
+    },
+    {
+      "start": 54100,
+      "end": 54300,
+      "text": "it's okay to take a look later."
+    },
+    {
+      "start": 54300,
+      "end": 54600,
+      "text": "Then we have the table and the picture."
+    },
+    {
+      "start": 54600,
+      "end": 54900,
+      "text": "You can see the experimental results."
+    },
+    {
+      "start": 54900,
+      "end": 55400,
+      "text": "The experimental results are related to the previous picture."
+    },
+    {
+      "start": 55400,
+      "end": 55700,
+      "text": "This is on the ImageNet database."
+    },
+    {
+      "start": 55700,
+      "end": 56100,
+      "text": "It's the same as when we didn't add the cross-sectional network."
+    },
+    {
+      "start": 56100,
+      "end": 56400,
+      "text": "We used the results of 18 layers and 34 layers."
+    },
+    {
+      "start": 56400,
+      "end": 56700,
+      "text": "This is when we added the ResNet that he proposed."
+    },
+    {
+      "start": 56700,
+      "end": 57200,
+      "text": "You can see that when you didn't add the residual cross-sectional network,"
+    },
+    {
+      "start": 57200,
+      "end": 57600,
+      "text": "34 layers of network, actually 18 layers of network,"
+    },
+    {
+      "start": 57600,
+      "end": 58300,
+      "text": "were higher than the training error."
+    },
+    {
+      "start": 58300,
+      "end": 58700,
+      "text": "That is, the results of CIFAR before."
+    },
+    {
+      "start": 58700,
+      "end": 59000,
+      "text": "The following picture is the core picture of the whole thesis."
+    },
+    {
+      "start": 59000,
+      "end": 59200,
+      "text": "He said that after using this method,"
+    },
+    {
+      "start": 59200,
+      "end": 59700,
+      "text": "the error is lower."
+    },
+    {
+      "start": 59700,
+      "end": 60100,
+      "text": "This should be the test accuracy."
+    },
+    {
+      "start": 60100,
+      "end": 60300,
+      "text": "This is your training accuracy."
+    },
+    {
+      "start": 60300,
+      "end": 60600,
+      "text": "So you can see that whether it's training accuracy or test accuracy,"
+    },
+    {
+      "start": 60600,
+      "end": 61000,
+      "text": "the difference is obvious when you add it."
+    },
+    {
+      "start": 61000,
+      "end": 61600,
+      "text": "But there are some conclusions of the table of this picture."
+    },
+    {
+      "start": 61600,
+      "end": 62100,
+      "text": "Generally speaking, the picture is a straightforward expression."
+    },
+    {
+      "start": 62100,
+      "end": 62500,
+      "text": "But we can write these numbers in detail on the table."
+    },
+    {
+      "start": 62500,
+      "end": 62700,
+      "text": "This is the same thing."
+    },
+    {
+      "start": 62700,
+      "end": 63000,
+      "text": "I have two different ways to express things."
+    },
+    {
+      "start": 63000,
+      "end": 63200,
+      "text": "Each has its own use."
+    },
+    {
+      "start": 63200,
+      "end": 63400,
+      "text": "There is more information in the picture."
+    },
+    {
+      "start": 63400,
+      "end": 63700,
+      "text": "But the numbers on the table are important to everyone."
+    },
+    {
+      "start": 63700,
+      "end": 64100,
+      "text": "Especially if you compare the article with the user behind you,"
+    },
+    {
+      "start": 64100,
+      "end": 64300,
+      "text": "he can use these numbers."
+    },
+    {
+      "start": 64300,
+      "end": 64700,
+      "text": "So you see that the result of the ResNet of 34 layers,"
+    },
+    {
+      "start": 64700,
+      "end": 65100,
+      "text": "the top one error rate is 25.3%."
+    },
+    {
+      "start": 65100,
+      "end": 65300,
+      "text": "But if you don't add it, you're 28%."
+    },
+    {
+      "start": 65300,
+      "end": 65600,
+      "text": "So the difference is still quite big."
+    },
+    {
+      "start": 65600,
+      "end": 65900,
+      "text": "If you look at the back, you can see more results."
+    },
+    {
+      "start": 65900,
+      "end": 66200,
+      "text": "This is the result of ResNet 152."
+    },
+    {
+      "start": 66200,
+      "end": 66500,
+      "text": "Of course, if you look at it below, it's compared with some other results."
+    },
+    {
+      "start": 66500,
+      "end": 66900,
+      "text": "Its 152 layers result is compared with the results of GoogleNet and VGT"
+    },
+    {
+      "start": 66900,
+      "end": 67200,
+      "text": "in the last competition."
+    },
+    {
+      "start": 67200,
+      "end": 67400,
+      "text": "You can see that it will still be much lower."
+    },
+    {
+      "start": 67400,
+      "end": 67800,
+      "text": "It's almost 7.89% to 4.5%."
+    },
+    {
+      "start": 67800,
+      "end": 68000,
+      "text": "It's down to 34%."
+    },
+    {
+      "start": 68000,
+      "end": 68200,
+      "text": "It's also very powerful."
+    },
+    {
+      "start": 68200,
+      "end": 68500,
+      "text": "This is the result of the last competition in 2015."
+    },
+    {
+      "start": 68500,
+      "end": 68700,
+      "text": "It's probably 3.57%."
+    },
+    {
+      "start": 68700,
+      "end": 69100,
+      "text": "And this result is basically to the limit of human."
+    },
+    {
+      "start": 69100,
+      "end": 69400,
+      "text": "But there are some results on CIFAR."
+    },
+    {
+      "start": 69400,
+      "end": 69700,
+      "text": "It's basically the same as the previous model."
+    },
+    {
+      "start": 69700,
+      "end": 70000,
+      "text": "Mainly, how good is my effect?"
+    },
+    {
+      "start": 70000,
+      "end": 70300,
+      "text": "This is a very simple introduction to this article."
+    },
+    {
+      "start": 70300,
+      "end": 70900,
+      "text": "We will give you a detailed look at each part of this article."
+    }
+  ],
+  "metadata": {
+    "video_id": "NnSldWhSqvY",
+    "title": "撑起计算机视觉半边天的ResNet",
+    "channel": "跟李沐学AI",
+    "upload_date": "20211022",
+    "description": "",
+    "duration": 710,
+    "url": "https://www.youtube.com/watch?v=NnSldWhSqvY"
+  },
+  "title": "撑起计算机视觉半边天的ResNet"
+}

@@ -1,0 +1,16 @@
+{
+  "video_id": "qhXZsFVxGKo",
+  "title": "Vanishing/Exploding Gradients (C2W1L10)",
+  "source": "youtube_subtitle",
+  "text": "Kind: captions Language: zh-Hans 训练 网络，尤其是深度神经 网络时，会遇到梯度消失和 梯度爆炸的问题。这意味着，在 训练深度 网络时，导数或 斜率有时会变得非常非常 大或非常非常小，甚至呈 指数级缩小，这使得 训练变得非常困难。在本视频中，您将看到 梯度消失或 梯度爆炸问题的真正含义， 以及如何通过精心选择 随机初始化方法来 显著减少这个问题，尤其是在 训练深度神经网络时。 在这个幻灯片的同一区域， 我绘制了一个每层只有两个 隐藏单元的网络，但实际上隐藏单元的数量也可以 更多。这个神经网络 将有参数 W1、W2、W3 等等，直到 WL。为了简单起见， 假设我们使用激活 函数 G(Z=Z)，这是一个线性 激活函数，并且忽略 集合 B(l=0)。在这种情况下， 您可以证明输出 Y 将是 WL 乘以 W0 - 1 乘以 WL - 2。 向下移动到 w3 W2 W1 乘以 X，这 意味着如果你想验证我的计算， W1 乘以 X 等于 Z1，对吧？ 因为 B 等于 0，所以 Z1 等于 W1 乘以 X，然后 代入 V，也就是 0，但 a1 等于 G(Z1)，但因为你使用的是线性 激活函数，所以它等于 Z1，因此第一项 W1X 等于 a1，然后通过所有步骤，你 可以得出 W2 乘以 W1 乘以 X 等于 a2，因为 G( Z2) 等于 G(W2) 乘以 a1， 这意味着这里这个项 等于 a2，然后 这个项等于 a3，依此类推， 直到所有这些 矩阵的乘积得到 Y，而不是 Y。现在 假设你的每个权重 矩阵 WL 都等于，比如说， 比单位矩阵大一点， 所以它是 1.5 1.500，严格来说， 最后一个矩阵的维度不同，所以 也许这只是剩下的这些 空矩阵。那么， 忽略最后那些维度不同的 矩阵，Y&lt;sub&gt;hat&lt;/sub&gt; 将是这个 1.500 1.5 矩阵的 L - 1 次方乘以 X。因为如果 我们假设每个 矩阵都等于这个矩阵，也就是 1.5 乘以单位矩阵， 那么最终会得到 这样的计算结果：Y&lt;sub&gt;hat&lt;/sub&gt; 本质上是 1.5 的 L 次方 - 1 次方乘以 X。如果 L 很大，对于非常深的神经网络，Y&lt;sub&gt;hat&lt;/sub&gt; 将会非常大，实际上它是指数 级增长的，就像 1.5 的层数一样增长。所以，如果 你有一个非常深的神经网络， Y&lt;sub&gt;hat&lt;/sub&gt; 的值会爆炸式增长。反过来， 如果我们用 0.5 替换它，也就是 小于 1 的值，那么它就 变成了 0.5 的 L 次方，其中这个矩阵 变成了 0.5 的 0 - 1 次方乘以 X。我们可以忽略 WL， 所以每个矩阵都小于 1。 假设 X 1 X 2 其中 1 1， 那么激活值将是 1/2 1/2 1/4 1/4 1/8 1/8，依此类推，直到 变成 1/2 的 L 次方。因此， 激活值将随着网络层数的增加 呈指数级下降。对于 非常深的网络，这些 激活值最终会呈 指数级下降。我希望 你能从中领悟到的直觉是：如果 权重 W 比 1 略大（或者说比 单位矩阵略大）， 那么对于非常深的网络， 激活值可能会呈指数级增长。如果 W 比单位矩阵略大（比如 0.9），那么对于非常深的网络， 激活值将呈指数 级下降。尽管我刚才的 论证是基于 激活值随层数呈指数级增长或下降，但 类似的论证也可以用来证明 导数或 我们知道，梯度会随着层数的 增加呈指数级增长或下降。 一些 现代神经网络的层数 l 甚至达到了 150 层。微软 在 52 层网络中取得了显著成果。 但是，对于如此深度的神经网络， 如果激活值梯度随着 L 的增加呈指数级 增长或下降， 那么这些值可能会 变得非常大或非常小，这 使得训练变得困难，尤其是在梯度呈指数级下降的情况下。例如在 ELM 中，梯度下降 只能采取非常小的步长，需要很 长时间才能 学习到任何东西。 总而言之，我们已经了解了深度网络如何受到梯度 消失或梯度爆炸问题的困扰。事实上， 长期以来，这个问题一直是 训练深度神经网络的一大障碍。 现在，有一个部分解决方案，虽然 不能完全解决这个 问题，但非常有帮助，那就是 谨慎地选择 权重初始化方式。接下来，我们来看下一个 视频。",
+  "metadata": {
+    "video_id": "qhXZsFVxGKo",
+    "title": "Vanishing/Exploding Gradients (C2W1L10)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/2vzq1jp\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 367,
+    "url": "https://www.youtube.com/watch?v=qhXZsFVxGKo"
+  },
+  "segments": []
+}

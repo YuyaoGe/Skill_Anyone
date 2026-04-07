@@ -1,0 +1,16 @@
+{
+  "video_id": "kVpDARqZdrQ",
+  "title": "Stable diffusion dreams of psychedelic faces",
+  "source": "youtube_subtitle",
+  "text": "Kind: captions Language: zh-Hans [音乐] 所以 [音乐] [音乐] 做 你",
+  "metadata": {
+    "video_id": "kVpDARqZdrQ",
+    "title": "Stable diffusion dreams of psychedelic faces",
+    "channel": "Andrej Karpathy",
+    "upload_date": "20220819",
+    "description": "Prompt: \"psychedelic faces\"\nStable diffusion takes a noise vector as input and samples an image. To create this video I smoothly (spherically) interpolate between randomly chosen noise vectors and render frames along the way.\n\nThis video was produced by one A100 GPU taking about 10 tabs and dreaming about the prompt overnight (~8 hours). While I slept and dreamt about other things.\n\nMusic: Stars by JVNA\n\nLinks:\n- Stable diffusion: https://stability.ai/blog\n- Code used to make this video: https://gist.github.com/karpathy/00103b0037c5aaea32fe1da1af553355\n- My twitter: https://twitter.com/karpathy",
+    "duration": 241,
+    "url": "https://www.youtube.com/watch?v=kVpDARqZdrQ"
+  },
+  "segments": []
+}

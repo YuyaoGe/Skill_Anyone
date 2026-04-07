@@ -1,0 +1,53 @@
+{
+  "video_id": "q1G0xZCqYxY",
+  "source": "whisper",
+  "model": "medium",
+  "text": "(speaking in foreign language) (speaking in foreign language) (speaking in foreign language) (speaking in foreign language) (speaking in foreign language) (speaking in foreign language) (speaking in foreign language)",
+  "segments": [
+    {
+      "start": 0,
+      "end": 392,
+      "text": "(speaking in foreign language)"
+    },
+    {
+      "start": 3000,
+      "end": 3392,
+      "text": "(speaking in foreign language)"
+    },
+    {
+      "start": 6000,
+      "end": 6392,
+      "text": "(speaking in foreign language)"
+    },
+    {
+      "start": 9000,
+      "end": 9392,
+      "text": "(speaking in foreign language)"
+    },
+    {
+      "start": 12000,
+      "end": 12392,
+      "text": "(speaking in foreign language)"
+    },
+    {
+      "start": 15000,
+      "end": 15392,
+      "text": "(speaking in foreign language)"
+    },
+    {
+      "start": 18000,
+      "end": 18392,
+      "text": "(speaking in foreign language)"
+    }
+  ],
+  "metadata": {
+    "video_id": "q1G0xZCqYxY",
+    "title": "我是如何快速阅读和整理文献",
+    "channel": "跟李沐学AI",
+    "upload_date": "20210508",
+    "description": "",
+    "duration": 185,
+    "url": "https://www.youtube.com/watch?v=q1G0xZCqYxY"
+  },
+  "title": "我是如何快速阅读和整理文献"
+}

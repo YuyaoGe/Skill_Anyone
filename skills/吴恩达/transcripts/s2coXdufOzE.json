@@ -1,0 +1,16 @@
+{
+  "video_id": "s2coXdufOzE",
+  "title": "Weight Initialization in a Deep Network (C2W1L11)",
+  "source": "youtube_subtitle",
+  "text": "Kind: captions Language: zh-Hans 在上一个视频中，你看到了深度 神经网络如何面临 梯度消除和梯度爆炸的问题。 事实证明，部分解决方案并 不能彻底解决这个问题，但 更好的或更谨慎地选择 神经网络的随机初始化方法会有很大帮助。为了理解这一点，我们先来看一个 初始化 单个神经元权重的 例子，然后将其推广到深度网络。 我们先来看一个只有一个神经元的例子，讨论一个深度神经网络。假设 单个神经元的输入 特征是 x1、x3、x4， 然后输入值等于 G 或 Z，输出值是 Y。 稍后， 这些输入将出现在 A 层， 但现在我们暂且称之为 Z。 所以 Z 等于 W1 x1 + W2 x2 + ... + Wn xn， 我们先将 B 设置为 0，暂时忽略 B。 为了使 V 成立， 既不能过大 也不能过小，你会注意到 n 越大，你希望 WI 的值就越小，对吧？ 因为 E 是 WI × I 的总和， 所以如果你要对很多项 求和，你希望每一项都 更小。一个合理的做法 是将 WI 的方差设置 为 1/N，其中 n 是 输入到神经元的特征数量。 所以在实践中，你可以将 某一层的权重矩阵 W 设置为 NP（随机变量 Rand n）， 然后无论矩阵的形状如何， 你都可以将其展开， 然后乘以 1/ 每个神经元输入的特征数量的平方根，也就是 nL - 1，因为这是 输入到每一层的单元的数量。 现在，如果你 使用随机 L 激活函数， 那么 1/n 的方差会比 nL 的方差略 好一些。你经常会 在初始化过程中看到这种情况，尤其是在使用 L 激活函数时。 V o 和 tavella 的值，以及 你对随机变量的熟悉程度，结果 表明，某个东西是高斯 随机变量，然后将其乘以该值的 平方根，这意味着 方差等于 2/n。好的，我之所以 从 n 变为 n 上标 L - 1， 是因为在这个逻辑 回归的例子中，任何输入 特征，但在更一般的情况下，第 L 层的每个单元都有 L - 1 个输入。 因此，如果 激活的输入特征大致为均值 0 和标准变体，并且收益为 1， 那么这将使它们也 处于类似的尺度。这并不能完全 解决梯度爆炸问题，但它确实有助于减少 梯度爆炸问题， 因为试图设置每个权 重矩阵 W，使其既不 太大也不 太小，这样它就不会爆炸或消失得 太快。我只想提 一些其他变体，我们 刚才描述的变体假设了一个罕见的 Lu 激活函数，这是来自一篇论文。 她还提到了一些其他变体。如果 你使用十英寸激活 函数，那么有一篇论文指出， 与其使用常数，不如 使用常数 1，也就是 1/2，然后乘以该项的 平方根。这个 平方根项会取代该项。 如果你 使用损坏的激活函数，这被 称为救世主初始化。 另一个版本由 Cellobiose Evangelist 的同事开发，我们可能会在 一些论文中看到。这个公式 有一些其他的服务器代码 依据。但我想说的是，如果你 使用常规激活函数（这 实际上是最常见的 激活函数），我会使用这个 公式。如果你使用 Tannish，你 可以尝试这个版本，一些 电机也会使用这个。但在 实践中，我认为所有这些公式都 只是给你一个起点，这是 你用于 权重矩阵初始化变体的默认值。 如果你希望变体在 这里，方差参数可以是 另一个东西——或者你的 超参数，所以你可以有另一个 参数乘以这个 公式。 在进行 超参数搜索时， 调整乘数有时会产生 显著效果。虽然 它并非 我通常首先尝试调整的参数类型， 但我确实遇到过一些问题， 调整它确实能带来一些 有用的结果。不过，就其 重要性而言，它通常排在 其他 可以调整的更重要参数之后。我希望这 能让你对梯度 消失或梯度爆炸的问题有所理解， 以及如何选择 合理的缩放比例来 初始化权重。这样 可以避免权重过快爆炸 或过快消失，从而让 你在 训练深度网络时，权重或梯度不会过度爆炸或消失。这是另一个 可以帮助你 更快地训练神经网络的技巧。",
+  "metadata": {
+    "video_id": "s2coXdufOzE",
+    "title": "Weight Initialization in a Deep Network (C2W1L11)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/2VGtjfI\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 372,
+    "url": "https://www.youtube.com/watch?v=s2coXdufOzE"
+  },
+  "segments": []
+}

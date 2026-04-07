@@ -25,7 +25,6 @@ cookies.txt
 
 # Project specific
 skills/.work/
-skills/*/transcripts/
 audio/
 *.wav
 *.mp3

@@ -1,0 +1,468 @@
+{
+  "video_id": "4Ct3Yujl1dk",
+  "source": "whisper",
+  "model": "medium",
+  "text": "In the last video you learned about gradient checking. In this video, I want to share with you some practical tips or some notes on how to actually go about implementing this for your neural network. First, don't use grad check in training, only to debug. So what I mean is that computing d theta or procs i for all the values of i, this is a very slow computation. So to implement gradient descent, you should use backprop to compute d theta, and just use backprop to compute the derivative. And it's only when you're debugging that you would compute this to make sure it's close to d theta. But once you've done that, then you would turn off the grad check and don't run this during every iteration of gradient descent because that's just much too slow. Second, if an algorithm fails grad check, look at the components, look at the individual components to try to identify the bug. So what I mean by that is if d theta or procs is very far from d theta, what I would do is look at the different values of i to see which are the values of d theta or procs that are really very different than the values of d theta. So for example, if you find that the values of theta or d theta, they're very far off, all correspond to d bl for some layer or for some layers, but the components for dw are quite close. Remember, different components of theta correspond to different components of b and w. When you find this in the case, then maybe you find that the bug is in how you're computing db, the derivative with respect to parameters b. And similarly vice versa, if you find that the values that are very far, the values from d theta or procs that are very far from d theta, you find that all those components came from dw or from dw in certain layer, then that might help you hone in on the location of the bug. This doesn't always let you identify the bug right away, but sometimes it helps you give you some guesses about where to track down the bug. Next, when doing grad check, remember your regularization term if you're using regularization. So if your cost function is J of theta equals 1 over m sum of your losses, and then plus this regularization term, right, sum of the l of wl for b minus norm squared, then this is the definition of J. And you should have that d theta is gradient of J with respect to theta, including this regularization term. So just remember to include that term. Next, grad check doesn't work with dropout because in every iteration, dropout is randomly eliminating different subsets of the hidden units. There isn't a easy to compute cost function J that dropout is doing gradient descent on. It turns out that dropout can be viewed as optimizing some cost function J, but it's a cost function J defined by summing over all exponentially large subsets of nodes it could eliminate in any iteration. So the cost function J is very difficult to compute, and you're just sampling the cost function every time you eliminate different random subset of nodes when you use dropout. So it's difficult to use grad check to double-check your computation with dropouts. So what I usually do is implement grad check without dropout. So if you want, you can set key prop in dropout to be equal to 1.0, and then turn on dropout and hope that my implementation of dropout was correct. There are some other things you could do like fix the pattern of nodes dropped and verify that grad check for that pattern of units killed off is correct, but in practice, I don't usually do that. So my recommendation is turn off dropout, use grad check to double-check that your algorithm is at least correct without dropout and then turn on dropout. Finally, this is a subtlety. It is not impossible, rarely happens, but it's not impossible that your implementation of gradient descent is correct when w and b are close to zero, so at random initialization, but that as you run gradient descent and w and b become bigger, maybe your implementation of backprop is correct only when w and b is close to zero, but it gets more inaccurate when w and b become large. So one thing you could do, I don't do this very often, but one thing you could do is run grad check at random initialization, and then train the network for a while so that w and b have some time to wander away from zero from your small random initial values and then run grad check again after you've trained for some number of iterations. So that's it for gradient checking and congratulations for coming to the end of this week's materials. In this week, you've learned about how to set up your train, dev, and test sets, how to analyze bias and variance and what things to do. If you have high bias, there's high variance versus maybe high bias and high variance. You also saw how to apply different forms of regularization, like L2 regularization and dropout on your neural network. So some tricks for speeding up the training of your neural network, and then finally, gradient checking. So I think you've seen a lot in this week and you get to exercise a lot of these ideas in this week's program exercise. So best of luck with that and I look forward to seeing you in the week two materials.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 300,
+      "text": "In the last video you learned about gradient checking."
+    },
+    {
+      "start": 300,
+      "end": 638,
+      "text": "In this video, I want to share with you some practical tips or"
+    },
+    {
+      "start": 638,
+      "end": 1078,
+      "text": "some notes on how to actually go about implementing this for your neural network."
+    },
+    {
+      "start": 1078,
+      "end": 1434,
+      "text": "First, don't use grad check in training, only to debug."
+    },
+    {
+      "start": 1434,
+      "end": 1804,
+      "text": "So what I mean is that computing d theta"
+    },
+    {
+      "start": 1804,
+      "end": 2044,
+      "text": "or procs i for all the values of i,"
+    },
+    {
+      "start": 2044,
+      "end": 2224,
+      "text": "this is a very slow computation."
+    },
+    {
+      "start": 2224,
+      "end": 2416,
+      "text": "So to implement gradient descent,"
+    },
+    {
+      "start": 2416,
+      "end": 2626,
+      "text": "you should use backprop to compute d theta,"
+    },
+    {
+      "start": 2626,
+      "end": 2884,
+      "text": "and just use backprop to compute the derivative."
+    },
+    {
+      "start": 2884,
+      "end": 3088,
+      "text": "And it's only when you're debugging that you would"
+    },
+    {
+      "start": 3088,
+      "end": 3396,
+      "text": "compute this to make sure it's close to d theta."
+    },
+    {
+      "start": 3396,
+      "end": 3516,
+      "text": "But once you've done that,"
+    },
+    {
+      "start": 3516,
+      "end": 3796,
+      "text": "then you would turn off the grad check and don't run this"
+    },
+    {
+      "start": 3796,
+      "end": 4116,
+      "text": "during every iteration of gradient descent because that's just much too slow."
+    },
+    {
+      "start": 4116,
+      "end": 4378,
+      "text": "Second, if an algorithm fails grad check,"
+    },
+    {
+      "start": 4378,
+      "end": 4772,
+      "text": "look at the components, look at the individual components to try to identify the bug."
+    },
+    {
+      "start": 4772,
+      "end": 5360,
+      "text": "So what I mean by that is if d theta or procs is very far from d theta,"
+    },
+    {
+      "start": 5360,
+      "end": 5764,
+      "text": "what I would do is look at the different values of i to see which are the values of"
+    },
+    {
+      "start": 5764,
+      "end": 6204,
+      "text": "d theta or procs that are really very different than the values of d theta."
+    },
+    {
+      "start": 6204,
+      "end": 6692,
+      "text": "So for example, if you find that the values of theta or d theta,"
+    },
+    {
+      "start": 6692,
+      "end": 6816,
+      "text": "they're very far off,"
+    },
+    {
+      "start": 6816,
+      "end": 7250,
+      "text": "all correspond to d bl for some layer or for some layers,"
+    },
+    {
+      "start": 7250,
+      "end": 7612,
+      "text": "but the components for dw are quite close."
+    },
+    {
+      "start": 7612,
+      "end": 8144,
+      "text": "Remember, different components of theta correspond to different components of b and w."
+    },
+    {
+      "start": 8144,
+      "end": 8284,
+      "text": "When you find this in the case,"
+    },
+    {
+      "start": 8284,
+      "end": 8728,
+      "text": "then maybe you find that the bug is in how you're computing db,"
+    },
+    {
+      "start": 8728,
+      "end": 9020,
+      "text": "the derivative with respect to parameters b."
+    },
+    {
+      "start": 9020,
+      "end": 9240,
+      "text": "And similarly vice versa,"
+    },
+    {
+      "start": 9240,
+      "end": 9516,
+      "text": "if you find that the values that are very far,"
+    },
+    {
+      "start": 9516,
+      "end": 9968,
+      "text": "the values from d theta or procs that are very far from d theta,"
+    },
+    {
+      "start": 9968,
+      "end": 10444,
+      "text": "you find that all those components came from dw or from dw in certain layer,"
+    },
+    {
+      "start": 10444,
+      "end": 10822,
+      "text": "then that might help you hone in on the location of the bug."
+    },
+    {
+      "start": 10822,
+      "end": 11108,
+      "text": "This doesn't always let you identify the bug right away,"
+    },
+    {
+      "start": 11108,
+      "end": 11624,
+      "text": "but sometimes it helps you give you some guesses about where to track down the bug."
+    },
+    {
+      "start": 11624,
+      "end": 11944,
+      "text": "Next, when doing grad check,"
+    },
+    {
+      "start": 11944,
+      "end": 12314,
+      "text": "remember your regularization term if you're using regularization."
+    },
+    {
+      "start": 12314,
+      "end": 13156,
+      "text": "So if your cost function is J of theta equals 1 over m sum of your losses,"
+    },
+    {
+      "start": 13156,
+      "end": 13512,
+      "text": "and then plus this regularization term,"
+    },
+    {
+      "start": 13512,
+      "end": 14026,
+      "text": "right, sum of the l of wl for b minus norm squared,"
+    },
+    {
+      "start": 14026,
+      "end": 14256,
+      "text": "then this is the definition of J."
+    },
+    {
+      "start": 14256,
+      "end": 14908,
+      "text": "And you should have that d theta is gradient of J with respect to theta,"
+    },
+    {
+      "start": 14908,
+      "end": 15076,
+      "text": "including this regularization term."
+    },
+    {
+      "start": 15076,
+      "end": 15272,
+      "text": "So just remember to include that term."
+    },
+    {
+      "start": 15272,
+      "end": 15708,
+      "text": "Next, grad check doesn't work with dropout because in every iteration,"
+    },
+    {
+      "start": 15708,
+      "end": 16132,
+      "text": "dropout is randomly eliminating different subsets of the hidden units."
+    },
+    {
+      "start": 16132,
+      "end": 16780,
+      "text": "There isn't a easy to compute cost function J that dropout is doing gradient descent on."
+    },
+    {
+      "start": 16780,
+      "end": 17260,
+      "text": "It turns out that dropout can be viewed as optimizing some cost function J,"
+    },
+    {
+      "start": 17260,
+      "end": 17648,
+      "text": "but it's a cost function J defined by summing over"
+    },
+    {
+      "start": 17648,
+      "end": 18088,
+      "text": "all exponentially large subsets of nodes it could eliminate in any iteration."
+    },
+    {
+      "start": 18088,
+      "end": 18448,
+      "text": "So the cost function J is very difficult to compute,"
+    },
+    {
+      "start": 18448,
+      "end": 18884,
+      "text": "and you're just sampling the cost function every time you eliminate"
+    },
+    {
+      "start": 18884,
+      "end": 19140,
+      "text": "different random subset of nodes when you use dropout."
+    },
+    {
+      "start": 19140,
+      "end": 19648,
+      "text": "So it's difficult to use grad check to double-check your computation with dropouts."
+    },
+    {
+      "start": 19648,
+      "end": 20024,
+      "text": "So what I usually do is implement grad check without dropout."
+    },
+    {
+      "start": 20024,
+      "end": 20160,
+      "text": "So if you want,"
+    },
+    {
+      "start": 20160,
+      "end": 20524,
+      "text": "you can set key prop in dropout to be equal to 1.0,"
+    },
+    {
+      "start": 20524,
+      "end": 21024,
+      "text": "and then turn on dropout and hope that my implementation of dropout was correct."
+    },
+    {
+      "start": 21024,
+      "end": 21480,
+      "text": "There are some other things you could do like fix the pattern of nodes dropped and"
+    },
+    {
+      "start": 21480,
+      "end": 22020,
+      "text": "verify that grad check for that pattern of units killed off is correct,"
+    },
+    {
+      "start": 22020,
+      "end": 22268,
+      "text": "but in practice, I don't usually do that."
+    },
+    {
+      "start": 22268,
+      "end": 22600,
+      "text": "So my recommendation is turn off dropout,"
+    },
+    {
+      "start": 22600,
+      "end": 22956,
+      "text": "use grad check to double-check that your algorithm is at least correct without"
+    },
+    {
+      "start": 22956,
+      "end": 23216,
+      "text": "dropout and then turn on dropout."
+    },
+    {
+      "start": 23216,
+      "end": 23516,
+      "text": "Finally, this is a subtlety."
+    },
+    {
+      "start": 23516,
+      "end": 23720,
+      "text": "It is not impossible,"
+    },
+    {
+      "start": 23720,
+      "end": 24140,
+      "text": "rarely happens, but it's not impossible that your implementation of gradient descent is"
+    },
+    {
+      "start": 24140,
+      "end": 24456,
+      "text": "correct when w and b are close to zero,"
+    },
+    {
+      "start": 24456,
+      "end": 24628,
+      "text": "so at random initialization,"
+    },
+    {
+      "start": 24628,
+      "end": 24962,
+      "text": "but that as you run gradient descent and w and b become bigger,"
+    },
+    {
+      "start": 24962,
+      "end": 25508,
+      "text": "maybe your implementation of backprop is correct only when w and b is close to zero,"
+    },
+    {
+      "start": 25508,
+      "end": 25844,
+      "text": "but it gets more inaccurate when w and b become large."
+    },
+    {
+      "start": 25844,
+      "end": 26016,
+      "text": "So one thing you could do,"
+    },
+    {
+      "start": 26016,
+      "end": 26148,
+      "text": "I don't do this very often,"
+    },
+    {
+      "start": 26148,
+      "end": 26548,
+      "text": "but one thing you could do is run grad check at random initialization,"
+    },
+    {
+      "start": 26548,
+      "end": 27012,
+      "text": "and then train the network for a while so that w and b have some time to wander away from"
+    },
+    {
+      "start": 27012,
+      "end": 27384,
+      "text": "zero from your small random initial values and then run"
+    },
+    {
+      "start": 27384,
+      "end": 27736,
+      "text": "grad check again after you've trained for some number of iterations."
+    },
+    {
+      "start": 27736,
+      "end": 27952,
+      "text": "So that's it for gradient checking and"
+    },
+    {
+      "start": 27952,
+      "end": 28256,
+      "text": "congratulations for coming to the end of this week's materials."
+    },
+    {
+      "start": 28256,
+      "end": 28524,
+      "text": "In this week, you've learned about how to set up your train,"
+    },
+    {
+      "start": 28524,
+      "end": 28952,
+      "text": "dev, and test sets, how to analyze bias and variance and what things to do."
+    },
+    {
+      "start": 28952,
+      "end": 29372,
+      "text": "If you have high bias, there's high variance versus maybe high bias and high variance."
+    },
+    {
+      "start": 29372,
+      "end": 29840,
+      "text": "You also saw how to apply different forms of regularization,"
+    },
+    {
+      "start": 29840,
+      "end": 30182,
+      "text": "like L2 regularization and dropout on your neural network."
+    },
+    {
+      "start": 30182,
+      "end": 30524,
+      "text": "So some tricks for speeding up the training of your neural network,"
+    },
+    {
+      "start": 30524,
+      "end": 30764,
+      "text": "and then finally, gradient checking."
+    },
+    {
+      "start": 30764,
+      "end": 31156,
+      "text": "So I think you've seen a lot in this week and you get to exercise a lot of"
+    },
+    {
+      "start": 31156,
+      "end": 31412,
+      "text": "these ideas in this week's program exercise."
+    },
+    {
+      "start": 31412,
+      "end": 31928,
+      "text": "So best of luck with that and I look forward to seeing you in the week two materials."
+    }
+  ],
+  "metadata": {
+    "video_id": "4Ct3Yujl1dk",
+    "title": "Gradient Checking Implementation Notes (C2W1L14)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/2VGFA3w\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 319,
+    "url": "https://www.youtube.com/watch?v=4Ct3Yujl1dk"
+  },
+  "title": "Gradient Checking Implementation Notes (C2W1L14)"
+}

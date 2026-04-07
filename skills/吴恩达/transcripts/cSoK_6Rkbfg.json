@@ -1,0 +1,398 @@
+{
+  "video_id": "cSoK_6Rkbfg",
+  "source": "whisper",
+  "model": "medium",
+  "text": "In the last video, you saw how sampling at random over the range of hyperparameters can allow you to search over the space of hyperparameters more efficiently. But it turns out that sampling at random doesn't mean sampling uniformly at random over the range of valid values. Instead, it's important to pick the appropriate scale on which to explore the hyperparameters. In this video, I want to show you how to do that. Let's say that you're trying to choose the number of hidden units nl for a given layer l. And let's say that you think a good range of values is somewhere from 50 to 100. In that case, if you look at the number line from 50 to 100, maybe picking some number of values at random within this number line is a pretty reasonable way to search for this particular hyperparameter. Or if you're trying to decide on the number of layers in your neural network, we're calling that capital L, maybe you think the total number of layers should be somewhere between two to four, then sampling uniformly at random among two, three and four might be reasonable. Or even using a grid search where you explicitly evaluate the values two, three and four might be reasonable. So these were a couple examples where sampling at uniformly at random over the range of contemplating might be a reasonable thing to do. But this is not true for all hyperparameters. Let's look at another example. Say you're searching for the hyperparameter alpha, the learning rate. And let's say that you suspect 0.0001 might be on the low end, or maybe it could be as high as one. Now, if you draw the number line from 0.0001 to one, and sample values at random, uniformly at random over this number line, or you know, about 90% of the values you sample will be between 0.1 and one. So you're using 90% of the resources to search between 0.1 and one, and only 10% of the resources to search between 0.0001 and 0.1. So that doesn't seem right. Instead, it seems more reasonable to search for hyperparameters on the log scale, where instead of using a linear scale, you'd have 0.0001 here, and then 0.001, 0.01, 0.1, and then one. And you instead sample uniformly at random on this type of logarithmic scale. Now you have more resources dedicated to searching between 0.0001 and 0.001, and between 0.001 and 0.01, and so on. So in Python, the way you implement this is let r equals negative 4 times np dot random dot rand, and then a randomly chosen value of alpha would be alpha equals 10 to the power of r. So after this first line, r will be a random number between minus 4 and 0, and so alpha here will be between 10 to the minus 4 and 10 to the 0. So 10 to the minus 4 is this left thing, this 10 to the minus 4, and 1 is 10 to the 0. In a more general case, if you're trying to sample between 10 to the a to 10 to the b on the log scale, and in this example, this is 10 to the a, and you can figure out what a is by taking the log base 10 of 0.0001, which is going to tell you a is negative 4. And this value on the right, this is 10 to the b, and you can figure out what b is by taking log base 10 of 1, which tells you b is equal to 0. So what you do is then sample r uniformly at random between a and b. So in this case, r would be between minus 4 and 0, and you can set alpha, or you'll randomly sample hyperparameter value as 10 to the r. Okay, so just to recap, to sample on the log scale, you take the low value, take logs to figure out what is a, take the high value, take a log to figure out what is b. So you're now trying to sample from 10 to the a to 10 to the b on a log scale. So you set r uniformly at random between a and b, and then you set the hyperparameter to be 10 to the r. So that's how you implement sampling on this log rhythmic scale. Finally, one other tricky case is sampling the hyperparameter beta used for computing exponentially weight and averages. So let's say you suspect that beta should be somewhere between 0.9 to 0.999. You know, maybe this is the range of values you want to search over. So remember that when computing exponentially weighted averages using 0.9 is like averaging over the last 10 values, kind of like taking the average of 10 days temperature, whereas using 0.999 is like averaging over the last 1000 values. So similar to what we saw on the last slide, if you want to search between 0.9 and 0.999, it doesn't make sense to sample on the linear scale, right, uniformly at random between 0.9 and 0.999. So a better way to think about this is that we want to explore the range of values of 1 minus beta, which is going to now range from 0.1 to 0.001. And so we'll sample between beta taking on values from 0.1 to maybe 0.1 to 0.001. So using the method we have figured out on the previous slide, this is 10 to the minus 1, this is 10 to the minus 3. Notice on the previous slide, we had the small value on the left and the large value on the right, but here we have a reverse with the large value on the left and the small value on the right. So what you do is you sample r uniformly at random from negative 3 to negative 1, and you set 1 minus beta equals 10 to the r, and so beta equals 1 minus 10 to the r, and this becomes a randomly sampled value of your hyperparameter chosen on the appropriate scale. And hopefully this makes sense in that this way you spend as much resources exploring the range 0.9 to 0.99 as you would exploring 0.99 to 0.999. So if you want a slightly more formal mathematical justification for why we're doing this, right, why is it such a bad idea to sample on a linear scale? It is that when beta is close to 1, the sensitivity of the results you get changes even with very small changes to beta. So if beta goes from 0.9 to 0.9005, you know, it's no big deal. This is hardly any change in your results. But if beta goes from 0.999 to 0.9995, this will have a huge impact on exactly what your algorithm is doing, right? In both of these cases, it's averaging over roughly 10 values, but here it's gone from an exponentially weighted average over about 1,000, the last 1,000 examples to now the last 2,000 examples. And it's because that formula we have 1 over 1 minus beta, this is very sensitive to small changes in beta when beta is close to 1. So what this whole sampling process does is it causes you to sample more densely in the regime of when beta is close to 1. Or alternatively, when 1 minus beta is close to 0, so that you can be more efficient in terms of how you distribute the samples to explore the space of possible outcomes more efficiently. So I hope this helps you select the right scale on which to sample the hyperparameters. In case you don't end up making the right scaling decision on some hyperparameter choice, you know, don't worry too much about it. Even if you sample on a uniform scale, where some other scale would have been superior, you might still get okay results, especially if you use a course-defined search so that in later iterations, you focus in more on the most useful range of hyperparameter values to sample. I hope this helps you with your hyperparameter search. In the next video, I also want to share with you some thoughts on how to organize your hyperparameter search process that I hope will make your workflow a bit more efficient.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 496,
+      "text": "In the last video, you saw how sampling at random over the range of hyperparameters"
+    },
+    {
+      "start": 496,
+      "end": 848,
+      "text": "can allow you to search over the space of hyperparameters more efficiently."
+    },
+    {
+      "start": 848,
+      "end": 1544,
+      "text": "But it turns out that sampling at random doesn't mean sampling uniformly at random over the range"
+    },
+    {
+      "start": 1544,
+      "end": 2096,
+      "text": "of valid values. Instead, it's important to pick the appropriate scale on which to explore the"
+    },
+    {
+      "start": 2096,
+      "end": 2688,
+      "text": "hyperparameters. In this video, I want to show you how to do that. Let's say that you're trying to"
+    },
+    {
+      "start": 2688,
+      "end": 3280,
+      "text": "choose the number of hidden units nl for a given layer l. And let's say that you think a good range"
+    },
+    {
+      "start": 3280,
+      "end": 4056,
+      "text": "of values is somewhere from 50 to 100. In that case, if you look at the number line from 50 to 100,"
+    },
+    {
+      "start": 4056,
+      "end": 4720,
+      "text": "maybe picking some number of values at random within this number line is a pretty reasonable"
+    },
+    {
+      "start": 4720,
+      "end": 5256,
+      "text": "way to search for this particular hyperparameter. Or if you're trying to decide on the number of"
+    },
+    {
+      "start": 5256,
+      "end": 5768,
+      "text": "layers in your neural network, we're calling that capital L, maybe you think the total number of"
+    },
+    {
+      "start": 5768,
+      "end": 6592,
+      "text": "layers should be somewhere between two to four, then sampling uniformly at random among two,"
+    },
+    {
+      "start": 6592,
+      "end": 7104,
+      "text": "three and four might be reasonable. Or even using a grid search where you explicitly evaluate the"
+    },
+    {
+      "start": 7104,
+      "end": 7808,
+      "text": "values two, three and four might be reasonable. So these were a couple examples where sampling at"
+    },
+    {
+      "start": 7808,
+      "end": 8400,
+      "text": "uniformly at random over the range of contemplating might be a reasonable thing to do. But this is not"
+    },
+    {
+      "start": 8400,
+      "end": 9024,
+      "text": "true for all hyperparameters. Let's look at another example. Say you're searching for the"
+    },
+    {
+      "start": 9024,
+      "end": 9880,
+      "text": "hyperparameter alpha, the learning rate. And let's say that you suspect 0.0001 might be on the low end,"
+    },
+    {
+      "start": 9880,
+      "end": 10904,
+      "text": "or maybe it could be as high as one. Now, if you draw the number line from 0.0001 to one,"
+    },
+    {
+      "start": 10904,
+      "end": 11720,
+      "text": "and sample values at random, uniformly at random over this number line, or you know, about 90% of"
+    },
+    {
+      "start": 11720,
+      "end": 12472,
+      "text": "the values you sample will be between 0.1 and one. So you're using 90% of the resources to search"
+    },
+    {
+      "start": 12472,
+      "end": 13320,
+      "text": "between 0.1 and one, and only 10% of the resources to search between 0.0001 and 0.1. So that doesn't"
+    },
+    {
+      "start": 13320,
+      "end": 13896,
+      "text": "seem right. Instead, it seems more reasonable to search for hyperparameters on the log scale,"
+    },
+    {
+      "start": 13896,
+      "end": 15024,
+      "text": "where instead of using a linear scale, you'd have 0.0001 here, and then 0.001, 0.01, 0.1, and then one."
+    },
+    {
+      "start": 15024,
+      "end": 15816,
+      "text": "And you instead sample uniformly at random on this type of logarithmic scale. Now you have"
+    },
+    {
+      "start": 15816,
+      "end": 16888,
+      "text": "more resources dedicated to searching between 0.0001 and 0.001, and between 0.001 and 0.01,"
+    },
+    {
+      "start": 16888,
+      "end": 17768,
+      "text": "and so on. So in Python, the way you implement this is let r equals negative 4 times np dot random"
+    },
+    {
+      "start": 17856,
+      "end": 18704,
+      "text": "dot rand, and then a randomly chosen value of alpha would be alpha equals 10 to the power of r."
+    },
+    {
+      "start": 18704,
+      "end": 19648,
+      "text": "So after this first line, r will be a random number between minus 4 and 0, and so alpha here"
+    },
+    {
+      "start": 19648,
+      "end": 20384,
+      "text": "will be between 10 to the minus 4 and 10 to the 0. So 10 to the minus 4 is this left thing, this 10"
+    },
+    {
+      "start": 20384,
+      "end": 21128,
+      "text": "to the minus 4, and 1 is 10 to the 0. In a more general case, if you're trying to sample between"
+    },
+    {
+      "start": 21128,
+      "end": 22088,
+      "text": "10 to the a to 10 to the b on the log scale, and in this example, this is 10 to the a, and you can"
+    },
+    {
+      "start": 22088,
+      "end": 22768,
+      "text": "figure out what a is by taking the log base 10 of 0.0001, which is going to tell you a is negative 4."
+    },
+    {
+      "start": 22768,
+      "end": 23360,
+      "text": "And this value on the right, this is 10 to the b, and you can figure out what b is by taking"
+    },
+    {
+      "start": 23360,
+      "end": 24160,
+      "text": "log base 10 of 1, which tells you b is equal to 0. So what you do is then sample r uniformly at"
+    },
+    {
+      "start": 24160,
+      "end": 24888,
+      "text": "random between a and b. So in this case, r would be between minus 4 and 0, and you can set alpha,"
+    },
+    {
+      "start": 24888,
+      "end": 25536,
+      "text": "or you'll randomly sample hyperparameter value as 10 to the r. Okay, so just to recap, to sample"
+    },
+    {
+      "start": 25536,
+      "end": 26152,
+      "text": "on the log scale, you take the low value, take logs to figure out what is a, take the high value,"
+    },
+    {
+      "start": 26152,
+      "end": 26672,
+      "text": "take a log to figure out what is b. So you're now trying to sample from 10 to the a to 10 to the b"
+    },
+    {
+      "start": 26672,
+      "end": 27416,
+      "text": "on a log scale. So you set r uniformly at random between a and b, and then you set the hyperparameter"
+    },
+    {
+      "start": 27416,
+      "end": 28064,
+      "text": "to be 10 to the r. So that's how you implement sampling on this log rhythmic scale. Finally,"
+    },
+    {
+      "start": 28064,
+      "end": 28840,
+      "text": "one other tricky case is sampling the hyperparameter beta used for computing exponentially weight and"
+    },
+    {
+      "start": 28840,
+      "end": 29600,
+      "text": "averages. So let's say you suspect that beta should be somewhere between 0.9 to 0.999. You know,"
+    },
+    {
+      "start": 29600,
+      "end": 30144,
+      "text": "maybe this is the range of values you want to search over. So remember that when computing"
+    },
+    {
+      "start": 30144,
+      "end": 30984,
+      "text": "exponentially weighted averages using 0.9 is like averaging over the last 10 values, kind of like"
+    },
+    {
+      "start": 30984,
+      "end": 31536,
+      "text": "taking the average of 10 days temperature, whereas using 0.999 is like averaging over"
+    },
+    {
+      "start": 31536,
+      "end": 32344,
+      "text": "the last 1000 values. So similar to what we saw on the last slide, if you want to search between"
+    },
+    {
+      "start": 32344,
+      "end": 32936,
+      "text": "0.9 and 0.999, it doesn't make sense to sample on the linear scale, right, uniformly at random"
+    },
+    {
+      "start": 32936,
+      "end": 33608,
+      "text": "between 0.9 and 0.999. So a better way to think about this is that we want to explore the range"
+    },
+    {
+      "start": 33608,
+      "end": 34480,
+      "text": "of values of 1 minus beta, which is going to now range from 0.1 to 0.001. And so we'll sample"
+    },
+    {
+      "start": 34632,
+      "end": 35504,
+      "text": "between beta taking on values from 0.1 to maybe 0.1 to 0.001. So using the method we have figured"
+    },
+    {
+      "start": 35504,
+      "end": 36216,
+      "text": "out on the previous slide, this is 10 to the minus 1, this is 10 to the minus 3. Notice on"
+    },
+    {
+      "start": 36216,
+      "end": 36720,
+      "text": "the previous slide, we had the small value on the left and the large value on the right, but here"
+    },
+    {
+      "start": 36720,
+      "end": 37376,
+      "text": "we have a reverse with the large value on the left and the small value on the right. So what you do"
+    },
+    {
+      "start": 37376,
+      "end": 38176,
+      "text": "is you sample r uniformly at random from negative 3 to negative 1, and you set 1 minus beta equals"
+    },
+    {
+      "start": 38176,
+      "end": 38832,
+      "text": "10 to the r, and so beta equals 1 minus 10 to the r, and this becomes a randomly sampled value of"
+    },
+    {
+      "start": 38832,
+      "end": 39368,
+      "text": "your hyperparameter chosen on the appropriate scale. And hopefully this makes sense in that"
+    },
+    {
+      "start": 39368,
+      "end": 40120,
+      "text": "this way you spend as much resources exploring the range 0.9 to 0.99 as you would exploring 0.99 to"
+    },
+    {
+      "start": 40120,
+      "end": 40768,
+      "text": "0.999. So if you want a slightly more formal mathematical justification for why we're doing"
+    },
+    {
+      "start": 40768,
+      "end": 41448,
+      "text": "this, right, why is it such a bad idea to sample on a linear scale? It is that when beta is close"
+    },
+    {
+      "start": 41448,
+      "end": 42136,
+      "text": "to 1, the sensitivity of the results you get changes even with very small changes to beta."
+    },
+    {
+      "start": 42208,
+      "end": 43256,
+      "text": "So if beta goes from 0.9 to 0.9005, you know, it's no big deal. This is hardly"
+    },
+    {
+      "start": 43256,
+      "end": 44424,
+      "text": "any change in your results. But if beta goes from 0.999 to 0.9995, this will have a huge impact on"
+    },
+    {
+      "start": 44424,
+      "end": 44920,
+      "text": "exactly what your algorithm is doing, right? In both of these cases, it's averaging over roughly"
+    },
+    {
+      "start": 44920,
+      "end": 45744,
+      "text": "10 values, but here it's gone from an exponentially weighted average over about 1,000, the last 1,000"
+    },
+    {
+      "start": 45744,
+      "end": 46424,
+      "text": "examples to now the last 2,000 examples. And it's because that formula we have 1 over 1 minus beta,"
+    },
+    {
+      "start": 46424,
+      "end": 47112,
+      "text": "this is very sensitive to small changes in beta when beta is close to 1. So what this whole sampling"
+    },
+    {
+      "start": 47112,
+      "end": 47712,
+      "text": "process does is it causes you to sample more densely in the regime of when beta is close to 1."
+    },
+    {
+      "start": 47920,
+      "end": 48552,
+      "text": "Or alternatively, when 1 minus beta is close to 0, so that you can be more efficient in terms of"
+    },
+    {
+      "start": 48552,
+      "end": 49120,
+      "text": "how you distribute the samples to explore the space of possible outcomes more efficiently."
+    },
+    {
+      "start": 49120,
+      "end": 49576,
+      "text": "So I hope this helps you select the right scale on which to sample the hyperparameters."
+    },
+    {
+      "start": 49576,
+      "end": 50136,
+      "text": "In case you don't end up making the right scaling decision on some hyperparameter choice,"
+    },
+    {
+      "start": 50136,
+      "end": 50528,
+      "text": "you know, don't worry too much about it. Even if you sample on a uniform scale,"
+    },
+    {
+      "start": 50528,
+      "end": 51040,
+      "text": "where some other scale would have been superior, you might still get okay results, especially if"
+    },
+    {
+      "start": 51040,
+      "end": 51544,
+      "text": "you use a course-defined search so that in later iterations, you focus in more on the most useful"
+    },
+    {
+      "start": 51544,
+      "end": 52048,
+      "text": "range of hyperparameter values to sample. I hope this helps you with your hyperparameter search."
+    },
+    {
+      "start": 52048,
+      "end": 52488,
+      "text": "In the next video, I also want to share with you some thoughts on how to organize your"
+    },
+    {
+      "start": 52488,
+      "end": 52984,
+      "text": "hyperparameter search process that I hope will make your workflow a bit more efficient."
+    }
+  ],
+  "metadata": {
+    "video_id": "cSoK_6Rkbfg",
+    "title": "Using an Appropriate Scale (C2W3L02)",
+    "channel": "DeepLearningAI",
+    "upload_date": "20170825",
+    "description": "Take the Deep Learning Specialization: http://bit.ly/3anfsyN\nCheck out all our courses: https://www.deeplearning.ai\nSubscribe to The Batch, our weekly newsletter: https://www.deeplearning.ai/thebatch\n\nFollow us: \nTwitter: https://twitter.com/deeplearningai_\nFacebook: https://www.facebook.com/deeplearningHQ/\nLinkedin: https://www.linkedin.com/company/deeplearningai",
+    "duration": 530,
+    "url": "https://www.youtube.com/watch?v=cSoK_6Rkbfg"
+  },
+  "title": "Using an Appropriate Scale (C2W3L02)"
+}

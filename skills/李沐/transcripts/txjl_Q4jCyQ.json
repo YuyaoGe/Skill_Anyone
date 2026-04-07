@@ -1,0 +1,468 @@
+{
+  "video_id": "txjl_Q4jCyQ",
+  "source": "whisper",
+  "model": "medium",
+  "text": "Hello everyone, yesterday I asked everyone if they were interested in reading a paper for 3 minutes or if they wanted to spend an hour to learn a paper in detail. As expected, 77% of the students said they wanted to know more about reading a paper in detail. What's interesting is that many of the students said they didn't care what I was saying. What they wanted to know was how I could read a paper in detail so that I could read it myself next time. I think this idea is very good, so I want to share with you some tips on reading a paper in general. We know that a paper has some structure. First, you have your title, right? Your title. After the title, of course, you are the author. Then it's your paper's introduction, abstract. After the introduction, it's your paper's introduction, intro, director. After the director, of course, it may be your related work. A more important part is the method you propose. After your method, of course, you have to prove that this method is very good, so you have to do some experiments, EXP. Finally, your conclusion, conclusion. The conclusion of the paper is based on such an abstract structure. You can say that I can read from start to finish. Of course, it's possible. But there are so many papers written in this world. If you read from start to finish, you may not be able to draw it in real life. And the article that suits you may be a small part of it. You need to find the article that suits you quickly and then read it thoroughly. I will introduce a method to you, which is how to draw a paper in three times. First, the first time, pass one. At this time, you need to pay attention to your title, your title, and your number. After you read these three parts, you probably know what this paper is talking about. Then you can jump to some experimental parts, some key pictures and tables. Then you can also go and take a look at what those pictures and tables in the method are doing. You can go and take a look at the results of the article. You can decide whether you want to continue reading or not. If you want to continue reading, then we will go to the second time. In the second time, we will go through the whole article and know what each piece is doing. We can read from the title to the end. At this time, you should not pay too much attention to the details. You can ignore some of the formulas, some of the special proofs, or some very detailed parts. But if you are mainly clear, then those important pictures and tables need to know what each of the words are doing. For example, what does the whole process picture look like in your method? What does the algorithm picture look like? What does each of the pictures in your experiment mean? What does the author's method of proposal and the other methods of comparison mean? How much is the difference? At this time, you may not really understand what he is doing. You can leave it to the next time. On this side, you probably have an understanding of the whole article. You can circle out some relevant documents in the middle. The author says that we are doing a certain problem, and this problem was proposed by someone. Then we improved it in the way of someone. If you find these important documents that you have not read, you can circle them out. For example, these documents, documents 1 and 3, you can circle them out. After reading this, you have to decide whether you want to continue reading. You may say that you have come this far. I know what problem he is solving, and what is the method he is using. But you think this article is too difficult to understand. It does not matter. If you think it is too difficult, you can read the articles they have already used. These previous works, maybe you can read them. Maybe you can read it a little lower. After reading it, come back and read this article. Another point, you may say that you do not need to know so much. I actually do it in a different direction. I know him. I am more confident this time. It does not matter if you do not understand your thesis completely. But if you think you should continue to go down, you will go to the third time. The third time you can think of it as the last time, and the most detailed one. In this time, of course, you need to know what every sentence is doing, what every paragraph is saying. You can imagine that when I am reading this article, I am constantly repeating this article in my mind. Or say something, say what problem I have raised, what method I am using to solve this problem. Then you can think, what if I do this thing? I should be able to do this thing with something. Then the author says, when doing experiments, I experimented this way. You can also think, if I were to do it, what should I do? Can I do it better than him? Then the author says, I have some places in this article that have not gone down, and the result is left. Then you can think about it, if I do it, can I go forward? The most important thing in this time is that you need to know what every sentence is doing. And you can always make up for the whole process in the brain. It's like you've done it yourself. After reading this time, you probably know the details of the whole thesis. Then you can probably recall a lot of details in the article. Then you can study it later. Or say, when you mention it later, you can think about it and repeat it again. These are the three stages of reading the thesis. Then the first step is to learn about the three stages of reading. The first step is to learn about the three stages of reading.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 500,
+      "text": "Hello everyone, yesterday I asked everyone if they were interested in reading a paper for 3 minutes"
+    },
+    {
+      "start": 500,
+      "end": 800,
+      "text": "or if they wanted to spend an hour to learn a paper in detail."
+    },
+    {
+      "start": 800,
+      "end": 1300,
+      "text": "As expected, 77% of the students said they wanted to know more about reading a paper in detail."
+    },
+    {
+      "start": 1300,
+      "end": 1800,
+      "text": "What's interesting is that many of the students said they didn't care what I was saying."
+    },
+    {
+      "start": 1800,
+      "end": 2400,
+      "text": "What they wanted to know was how I could read a paper in detail so that I could read it myself next time."
+    },
+    {
+      "start": 2400,
+      "end": 2900,
+      "text": "I think this idea is very good, so I want to share with you some tips on reading a paper in general."
+    },
+    {
+      "start": 2900,
+      "end": 3200,
+      "text": "We know that a paper has some structure."
+    },
+    {
+      "start": 3200,
+      "end": 3500,
+      "text": "First, you have your title, right? Your title."
+    },
+    {
+      "start": 3500,
+      "end": 3700,
+      "text": "After the title, of course, you are the author."
+    },
+    {
+      "start": 3700,
+      "end": 4000,
+      "text": "Then it's your paper's introduction, abstract."
+    },
+    {
+      "start": 4000,
+      "end": 4300,
+      "text": "After the introduction, it's your paper's introduction, intro, director."
+    },
+    {
+      "start": 4300,
+      "end": 4600,
+      "text": "After the director, of course, it may be your related work."
+    },
+    {
+      "start": 4600,
+      "end": 5000,
+      "text": "A more important part is the method you propose."
+    },
+    {
+      "start": 5000,
+      "end": 5500,
+      "text": "After your method, of course, you have to prove that this method is very good, so you have to do some experiments, EXP."
+    },
+    {
+      "start": 5500,
+      "end": 5700,
+      "text": "Finally, your conclusion, conclusion."
+    },
+    {
+      "start": 5700,
+      "end": 6100,
+      "text": "The conclusion of the paper is based on such an abstract structure."
+    },
+    {
+      "start": 6100,
+      "end": 6500,
+      "text": "You can say that I can read from start to finish. Of course, it's possible."
+    },
+    {
+      "start": 6500,
+      "end": 6800,
+      "text": "But there are so many papers written in this world."
+    },
+    {
+      "start": 6800,
+      "end": 7100,
+      "text": "If you read from start to finish, you may not be able to draw it in real life."
+    },
+    {
+      "start": 7100,
+      "end": 7400,
+      "text": "And the article that suits you may be a small part of it."
+    },
+    {
+      "start": 7400,
+      "end": 7800,
+      "text": "You need to find the article that suits you quickly and then read it thoroughly."
+    },
+    {
+      "start": 7800,
+      "end": 8200,
+      "text": "I will introduce a method to you, which is how to draw a paper in three times."
+    },
+    {
+      "start": 8200,
+      "end": 8400,
+      "text": "First, the first time, pass one."
+    },
+    {
+      "start": 8400,
+      "end": 10488,
+      "text": "At this time, you need to pay attention to your title, your"
+    },
+    {
+      "start": 10488,
+      "end": 11488,
+      "text": "title, and your number."
+    },
+    {
+      "start": 11488,
+      "end": 11788,
+      "text": "After you read these three parts, you probably know what this paper is talking about."
+    },
+    {
+      "start": 11788,
+      "end": 12388,
+      "text": "Then you can jump to some experimental parts, some key pictures and tables."
+    },
+    {
+      "start": 12388,
+      "end": 12888,
+      "text": "Then you can also go and take a look at what those pictures and tables in the method are doing."
+    },
+    {
+      "start": 12888,
+      "end": 13488,
+      "text": "You can go and take a look at the results of the article."
+    },
+    {
+      "start": 13488,
+      "end": 14888,
+      "text": "You can decide whether you want to continue reading or not."
+    },
+    {
+      "start": 14888,
+      "end": 15288,
+      "text": "If you want to continue reading, then we will go to the second time."
+    },
+    {
+      "start": 15288,
+      "end": 15888,
+      "text": "In the second time, we will go through the whole article and know what each piece is doing."
+    },
+    {
+      "start": 15888,
+      "end": 16388,
+      "text": "We can read from the title to the end."
+    },
+    {
+      "start": 16388,
+      "end": 16688,
+      "text": "At this time, you should not pay too much attention to the details."
+    },
+    {
+      "start": 16688,
+      "end": 17088,
+      "text": "You can ignore some of the formulas, some of the special proofs, or some very detailed parts."
+    },
+    {
+      "start": 17088,
+      "end": 17588,
+      "text": "But if you are mainly clear, then those important pictures and tables need to know what each of"
+    },
+    {
+      "start": 17588,
+      "end": 17788,
+      "text": "the words are doing."
+    },
+    {
+      "start": 17788,
+      "end": 18088,
+      "text": "For example, what does the whole process picture look like in your method?"
+    },
+    {
+      "start": 18088,
+      "end": 18388,
+      "text": "What does the algorithm picture look like?"
+    },
+    {
+      "start": 18388,
+      "end": 18888,
+      "text": "What does each of the pictures in your experiment mean?"
+    },
+    {
+      "start": 18888,
+      "end": 19188,
+      "text": "What does the author's method of proposal and the other methods of comparison mean?"
+    },
+    {
+      "start": 19188,
+      "end": 19288,
+      "text": "How much is the difference?"
+    },
+    {
+      "start": 19288,
+      "end": 19688,
+      "text": "At this time, you may not really understand what he is doing."
+    },
+    {
+      "start": 19688,
+      "end": 19888,
+      "text": "You can leave it to the next time."
+    },
+    {
+      "start": 19888,
+      "end": 20288,
+      "text": "On this side, you probably have an understanding of the whole article."
+    },
+    {
+      "start": 20288,
+      "end": 20688,
+      "text": "You can circle out some relevant documents in the middle."
+    },
+    {
+      "start": 20688,
+      "end": 21288,
+      "text": "The author says that we are doing a certain problem, and this problem was proposed by someone."
+    },
+    {
+      "start": 21288,
+      "end": 21588,
+      "text": "Then we improved it in the way of someone."
+    },
+    {
+      "start": 21588,
+      "end": 22088,
+      "text": "If you find these important documents that you have not read, you can circle them out."
+    },
+    {
+      "start": 22088,
+      "end": 22488,
+      "text": "For example, these documents, documents 1 and 3, you can circle them out."
+    },
+    {
+      "start": 22488,
+      "end": 22888,
+      "text": "After reading this, you have to decide whether you want to continue reading."
+    },
+    {
+      "start": 22888,
+      "end": 23088,
+      "text": "You may say that you have come this far."
+    },
+    {
+      "start": 23088,
+      "end": 23488,
+      "text": "I know what problem he is solving, and what is the method he is using."
+    },
+    {
+      "start": 23488,
+      "end": 23888,
+      "text": "But you think this article is too difficult to understand."
+    },
+    {
+      "start": 23888,
+      "end": 24088,
+      "text": "It does not matter."
+    },
+    {
+      "start": 24088,
+      "end": 24488,
+      "text": "If you think it is too difficult, you can read the articles they have already used."
+    },
+    {
+      "start": 24488,
+      "end": 24788,
+      "text": "These previous works, maybe you can read them."
+    },
+    {
+      "start": 24788,
+      "end": 24888,
+      "text": "Maybe you can read it a little lower."
+    },
+    {
+      "start": 24888,
+      "end": 25088,
+      "text": "After reading it, come back and read this article."
+    },
+    {
+      "start": 25088,
+      "end": 25388,
+      "text": "Another point, you may say that you do not need to know so much."
+    },
+    {
+      "start": 25388,
+      "end": 25588,
+      "text": "I actually do it in a different direction."
+    },
+    {
+      "start": 25588,
+      "end": 25688,
+      "text": "I know him."
+    },
+    {
+      "start": 25688,
+      "end": 25888,
+      "text": "I am more confident this time."
+    },
+    {
+      "start": 25888,
+      "end": 26088,
+      "text": "It does not matter if you do not understand your thesis completely."
+    },
+    {
+      "start": 26088,
+      "end": 26588,
+      "text": "But if you think you should continue to go down, you will go to the third time."
+    },
+    {
+      "start": 26588,
+      "end": 26888,
+      "text": "The third time you can think of it as the last time, and the most detailed one."
+    },
+    {
+      "start": 26888,
+      "end": 27388,
+      "text": "In this time, of course, you need to know what every sentence is doing, what every paragraph is saying."
+    },
+    {
+      "start": 27388,
+      "end": 27788,
+      "text": "You can imagine that when I am reading this article,"
+    },
+    {
+      "start": 27788,
+      "end": 28188,
+      "text": "I am constantly repeating this article in my mind."
+    },
+    {
+      "start": 28188,
+      "end": 28688,
+      "text": "Or say something, say what problem I have raised, what method I am using to solve this problem."
+    },
+    {
+      "start": 28688,
+      "end": 29088,
+      "text": "Then you can think, what if I do this thing?"
+    },
+    {
+      "start": 29088,
+      "end": 29388,
+      "text": "I should be able to do this thing with something."
+    },
+    {
+      "start": 29388,
+      "end": 29688,
+      "text": "Then the author says, when doing experiments,"
+    },
+    {
+      "start": 29688,
+      "end": 29788,
+      "text": "I experimented this way."
+    },
+    {
+      "start": 29788,
+      "end": 30088,
+      "text": "You can also think, if I were to do it, what should I do?"
+    },
+    {
+      "start": 30088,
+      "end": 30188,
+      "text": "Can I do it better than him?"
+    },
+    {
+      "start": 30188,
+      "end": 30588,
+      "text": "Then the author says, I have some places in this article that have not gone down,"
+    },
+    {
+      "start": 30588,
+      "end": 30788,
+      "text": "and the result is left."
+    },
+    {
+      "start": 30788,
+      "end": 31188,
+      "text": "Then you can think about it, if I do it, can I go forward?"
+    },
+    {
+      "start": 31188,
+      "end": 31688,
+      "text": "The most important thing in this time is that you need to know what every sentence is doing."
+    },
+    {
+      "start": 31688,
+      "end": 32188,
+      "text": "And you can always make up for the whole process in the brain."
+    },
+    {
+      "start": 32188,
+      "end": 32488,
+      "text": "It's like you've done it yourself."
+    },
+    {
+      "start": 32488,
+      "end": 32888,
+      "text": "After reading this time, you probably know the details of the whole thesis."
+    },
+    {
+      "start": 32888,
+      "end": 33288,
+      "text": "Then you can probably recall a lot of details in the article."
+    },
+    {
+      "start": 33288,
+      "end": 33488,
+      "text": "Then you can study it later."
+    },
+    {
+      "start": 33488,
+      "end": 33988,
+      "text": "Or say, when you mention it later, you can think about it and repeat it again."
+    },
+    {
+      "start": 33988,
+      "end": 34288,
+      "text": "These are the three stages of reading the thesis."
+    },
+    {
+      "start": 34288,
+      "end": 35678,
+      "text": "Then the"
+    },
+    {
+      "start": 35678,
+      "end": 37078,
+      "text": "first step is to learn about the three stages of reading."
+    },
+    {
+      "start": 37078,
+      "end": 39778,
+      "text": "The first step is to learn about the three stages of reading."
+    }
+  ],
+  "metadata": {
+    "video_id": "txjl_Q4jCyQ",
+    "title": "如何读论文",
+    "channel": "跟李沐学AI",
+    "upload_date": "20211022",
+    "description": "",
+    "duration": 398,
+    "url": "https://www.youtube.com/watch?v=txjl_Q4jCyQ"
+  },
+  "title": "如何读论文"
+}
